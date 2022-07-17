@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!-- <script src="//cdn.rawgit.com/dcodeIO/protobuf.js/6.11.3/dist/protobuf.js"></script>-->
+
+
+<head>
+
+
+</head>
+
+<style>
+
+
+</style>
+
+<body>
+
+
+    <h1>hi</h1>
+
+
+</body>
+
+
+<script type="module">
+
+    //   import { TAWebsocket } from "tournament-assistant-client";
+
+
+    console.log("Connecting to TA");
+   // var TAsock = new WebSocket({
+   //             url: "ws://tournamentassistant.net:2053",
+   //             name: "Justin",
+    //        });
+
+
+    //            console.log(TAsock);
+                
+    const TAsock = new WebSocket("ws://tournamentassistant.net:2053");
+    TAsock.binaryType = 'arraybuffer'
+
+    TAsock.onopen = function (event) {
+              console.log("*hacker voice* I'm in.");
+              console.log(TAsock);
+                };
+                TAsock.onmessage = async function (event) {
+                    console.log(event);
+                };
+
+// 3. Most Importantly: Listen for received messages
+    TAsock.addEventListener('message', function (event) {
+
+      var msg = event.data
+      console.log(msg);
+
+      buffer = Uint8Array.from(atob(msg), c => c.charCodeAt(0))
+
+
+      protobuf.load("/proto/models.proto", function(err, root) {
+        if (err)
+        throw err;
+
+        var BeatmapEncoded = root.lookupType("Beatmap");
+
+
+        var Beatmap = BeatmapEncoded.decode(buffer);
+
+        // message now contains an object with the properties specified in the .proto file
+        console.log(Beatmap)   
+      });
+    });
+
+
+
+            //    TAsock.taClient.on('packet', (e) => {
+            //        console.log(e);
+            //    });
+</script>
+
+</html>
