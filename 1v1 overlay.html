@@ -1,0 +1,741 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+        .mapInfo.Box {
+            box-sizing: border-box;
+            position: absolute;
+            width: 554px;
+            height: 145px;
+            left: 1336px;
+            top: 906px;
+
+            background: rgba(0, 166, 189, 0.30);
+            border: 4px solid #00A6BD;
+            border-radius: 24px;
+        }
+
+        .mapInfo.Cover {
+
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            left: 13px;
+            top: 10px;
+
+            background: url(image.png);
+            border-radius: 15px;
+        }
+
+        .mapInfo.Artist {
+
+            position: absolute;
+            width: 203.9px;
+            height: 18.71px;
+            left: 139px;
+            top: -2px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #FFFFFF;
+        }
+
+        .mapInfo.SongName {
+
+            position: absolute;
+            width: 350px;
+            height: 32px;
+            left: 139px;
+            top: 15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 30px;
+
+            color: #FFFFFF;
+
+        }
+
+
+        .mapInfo.Mapper {
+
+            position: absolute;
+            width: 309px;
+            height: 23px;
+            left: 139px;
+            top: 55px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 21px;
+
+            color: #FFFFFF;
+
+        }
+
+        .mapInfo.Diff {
+
+            position: absolute;
+            width: 54.58px;
+            height: 16.76px;
+            left: 140px;
+            bottom: 00px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            text-align: left;
+
+            color: #FFFFFF;
+
+        }
+
+        .mapInfo.Diff.Background {
+
+            background: #00A6BD;
+            border-radius: 7px;
+            width: auto;
+            height: auto;
+            padding: 4px 10px 4px 10px;
+        }
+
+        .mapInfo.Key {
+
+            position: absolute;
+            width: 49.9px;
+            height: 18.71px;
+            right: 10px;
+            top: 0px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            text-align: right;
+
+            color: #FFFFFF;
+        }
+
+        .mapInfo.Time {
+
+            position: absolute;
+            width: 50px;
+            height: 19px;
+            right: 10px;
+            bottom: 0px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 20px;
+            text-align: right;
+
+            color: #FFFFFF;
+        }
+
+        .leftTeam.Picture {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 30px;
+            top: 15px;
+
+            background: url(leftteam.png);
+            border-radius: 15px;
+        }
+
+        .leftTeam.Name {
+            position: absolute;
+            width: 308px;
+            height: 130px;
+            left: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: bold;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+        }
+
+        .rightTeam.Picture {
+
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 1760px;
+            top: 15px;
+
+            background: url(Longhorn.png);
+            border-radius: 15px;
+        }
+
+        .rightTeam.Name {
+            position: absolute;
+            width: 330px;
+            height: 130px;
+            right: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+
+
+        }
+
+        .roundInfo {
+            position: absolute;
+            width: 89px;
+            height: 30px;
+            left: 915px;
+            top: -15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+
+            color: #FFFFFF;
+
+        }
+
+        .cvreLogo {
+            position: absolute;
+            width: 191px;
+            height: 86px;
+            left: 864px;
+            top: 42px;
+
+            background: url(cvrelogo.png);
+        }
+
+        .Player1Info.NamePfp {
+            position: absolute;
+            width: 312px;
+            height: 60px;
+            left: 30px;
+            top: 190px;
+        }
+
+        .Player1Info.Pfp {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            left: 0px;
+            top: 0px;
+
+            background: url(noprofilepic.png);
+            border-radius: 13px;
+        }
+
+        .Player1Info.Name {
+            position: absolute;
+            width: 242px;
+            height: 55px;
+            left: 70px;
+            top: -15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 48px;
+
+            color: #FFFFFF;
+        }
+
+        .Player1Info.Scoring.Misses {
+            position: absolute;
+            width: 282px;
+            height: 46px;
+            left: 30px;
+            top: 715px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 60px;
+
+            color: #FFFFFF;
+
+        }
+
+        .Player1Info.Scoring.Combo {
+
+            position: absolute;
+            width: 232px;
+            height: 46px;
+            left: 30px;
+            top: 760px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+
+            color: #FFFFFF;
+
+        }
+
+        .Player1Info.Scoring.Acc {
+
+            position: absolute;
+            width: 244px;
+            height: 66px;
+            right: 980px;
+            top: 727px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 96px;
+            text-align: right;
+
+            color: #FFFFFF;
+        }
+
+        .Player1Info.Scoring.Score {
+            position: absolute;
+            width: auto;
+            height: 46px;
+            right: 980px;
+            top: 845px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 450;
+            font-size: 36px;
+            line-height: 54px;
+            text-align: right;
+
+            color: #FFFFFF;
+        }
+
+
+        .Player2Info.NamePfp {
+            position: absolute;
+            width: 312px;
+            height: 60px;
+            left: 1578px;
+            top: 190px;
+        }
+
+        .Player2Info.Pfp {
+
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            right: 0px;
+            top: 0px;
+
+            background: url(noprofilepic.png);
+            border-radius: 13px;
+        }
+
+        .Player2Info.Name {
+
+            position: absolute;
+            width: 242px;
+            height: 55px;
+            right: 70px;
+            top: -15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: right;
+
+            color: #FFFFFF;
+
+
+        }
+
+        .Player2Info.Scoring.Misses {
+            position: absolute;
+            width: 263px;
+            height: 46px;
+            left: 1627px;
+            top: 715px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+
+            color: #FF0000;
+
+        }
+
+        .Player2Info.Scoring.Combo {
+
+            position: absolute;
+            width: 232px;
+            height: 46px;
+            left: 1658px;
+            top: 760px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+
+            color: #FFFFFF;
+        }
+
+        .Player2Info.Scoring.Acc {
+
+            position: absolute;
+            width: 257px;
+            height: 66px;
+            left: 972px;
+            top: 727px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 96px;
+
+            color: #FFFFFF;
+        }
+
+        .Player2Info.Scoring.Score {
+            position: absolute;
+            width: auto;
+            height: 46px;
+            left: 975px;
+            top: 845px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 450;
+            font-size: 36px;
+            line-height: 54px;
+
+            color: #FFFFFF;
+
+        }
+
+
+
+
+        .Replay.Box {
+            background: #ffffff;
+            border-radius: 10px;
+            /* Making border radius */
+            width: auto;
+            /* Making auto-sizable width */
+            height: auto;
+            /* Making auto-sizable height */
+            padding: 0px 4px 1px 4px;
+        }
+
+        .Replay.MainText {
+            position: absolute;
+            width: 122px;
+            height: 46px;
+            left: 895px;
+            top: 963px;
+
+            font-family: 'Poppins';
+            font-style: medium;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: center;
+
+            color: #000000;
+
+        }
+
+        .Replay.P1Acc {
+
+            position: absolute;
+            width: auto;
+            height: 46px;
+            right: 1040px;
+            top: 963px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: right;
+
+            color: #000000;
+        }
+
+        .Replay.P1Score {
+
+            position: absolute;
+            width: auto;
+            height: 46px;
+            right: 980px;
+            top: 903px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: right;
+
+            color: #000000;
+        }
+
+        .Replay.P2Acc {
+
+            position: absolute;
+            width: auto;
+            height: 46px;
+            left: 1040px;
+            top: 963px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: left;
+
+            color: #000000;
+        }
+
+        .Replay.P2Score {
+
+            position: absolute;
+            width: auto;
+            height: 46px;
+            left: 975px;
+            top: 903px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 48px;
+            text-align: left;
+
+            color: #000000;
+        }
+
+        .Team1Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 787px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 710px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Team1Box3 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 633px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 556px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1078px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+        }
+
+        .Team2Box2 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1155px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+        }
+
+        .Team2Box3 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1232px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1309px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="roundInfo" class="roundInfo">Finals</p>
+    <img id="cvreLogo" src="images/cvrelogo.png" class="cvreLogo">
+    <div class="leftTeam" id="Team1">
+        <img id="leftTeamImage" src="images/fallen.png" class="leftTeam Picture">
+        <h1 id="leftTeamName" class="leftTeam Name">Extra long team name lol</p>
+    </div>
+
+    <div class="rightTeam" id="Team2">
+        <img id="rightTeamImage" src="images/fallen.png" class="rightTeam Picture">
+        <h1 id="rightTeamName" class="rightTeam Name">Right Team</p>
+    </div>
+
+
+    <div class="Team1Box1"></div>
+    <div class="Team1Box2"></div>
+    <div class="Team1Box3"></div>
+    <div class="Team1Box4"></div>
+
+    <div class="Team2Box1"></div>
+    <div class="Team2Box2"></div>
+    <div class="Team2Box3"></div>
+    <div class="Team2Box4"></div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="Player1Info Namepfp">
+        <img id="Player1Pfp" src="images/fallen.png" class="Player1Info Pfp">
+        <h1 id="Player1Name" class="Player1Info Name">Player 1 </p>
+    </div>
+    <div class="Player1Info Scoring" id="Player1Scoring">
+        <p id="P1Misses" class="Player1Info Scoring Misses">FC</p>
+        <p id="P1Combo" class="Player1Info Scoring Combo">382x</p>
+        <p id="P1Acc" class="Player1Info Scoring Acc">90.1%</p>
+        <p id="P1Score" class="Player1Info Scoring Score">372</p>
+    </div>
+
+
+    <div class="Player2Info Namepfp">
+        <img id="Player2Pfp" src="images/fallen.png" class="Player2Info Pfp">
+        <h1 id="Player2Name" class="Player2Info Name">Player 2 </p>
+    </div>
+    <div class="Player2Info Scoring" id="Player2Scoring">
+        <p id="P2Misses" class="Player2Info Scoring Misses">1x</p>
+        <p id="P2Combo" class="Player2Info Scoring Combo">511x</p>
+        <p id="P2Acc" class="Player2Info Scoring Acc">43.2%</p>
+        <p id="P2Score" class="Player2Info Scoring Score">342,431</p>
+    </div>
+
+    <div class="Replay" id="Replay">
+        <p class="Replay MainText Box">Replay</p>
+        <p id="P1OldAcc" class="Replay P1Acc Box">80.9%</p>
+        <p id="P1OldScore" class="Replay P1Score Box">342,423</p>
+        <p id="P2OldAcc" class="Replay P2Acc Box">90.32%</p>
+        <p id="P2OldScore" class="Replay P2Score Box">38,381,059</p>
+
+
+    </div>
+
+
+
+    <div class="mapInfo Box" name="SongInfo">
+        <img id="songCover" src="images/fallen.png" class="mapInfo Cover">
+        <p id="SongArtist" class="mapInfo Artist">Lucicin</p>
+        <p id="SongName" class="mapInfo SongName">Fallen Symphony</p>
+        <p id="SongMapper" class="mapInfo Mapper">Mapped by abcbadq</p>
+        <p id="SongDiff" class="mapInfo Diff Background">Expert+</p>
+        <p id="SongKey" class="mapInfo Key">1a209</p>
+        <p id="SongKey" class="mapInfo Time">9:27</p>
+
+
+
+
+    </div>
+</body>
+
+
+
+
+</html>

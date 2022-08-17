@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "animate.css": "^4.1.1",
     "google-protobuf": "^3.20.1",
     "node": "^17.7.2",
     "node-fetch": "^3.2.4",

@@ -37,11 +37,21 @@ TAsock.taClient.on("matchCreated", function (e) {
 
 });
 
-  TAsock.taClient.on("userAdded", function (p) {
-    if (p.data.client_type === Models.User.ClientTypes.Player) {
-        console.log("a player has joined!")
-    }
-})    
+
+TAsock.taClient.on("loadSong", (p) => {
+  if (p.data.client_type === Models.User.ClientTypes.Beatmap) {
+      console.log(Models.User.ClientTypes.Beatmap)
+  }
+})  
+
+
+
+//   TAsock.taClient.on("userAdded", (p) => {
+//     console.log(Models.User.ClientTypes.Player);
+//     if (p.data.client_type === Models.User.ClientTypes.Player) {
+//         console.log("a player has joined!")
+//     }
+// })    
   // console.log(match);
 
   // protobuf.load("./proto/models.proto", (err, root) => {
