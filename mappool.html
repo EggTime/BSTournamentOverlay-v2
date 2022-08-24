@@ -1,0 +1,1246 @@
+<html>
+
+<head>
+
+
+
+
+</head>
+
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+    .mapInfo.Box {
+        box-sizing: border-box;
+        width: 554px;
+        height: 145px;
+
+        background: rgba(0, 166, 189, 0.30);
+        border: 4px solid #00A6BD;
+        border-radius: 24px;
+    }
+
+    .mapInfo.Cover {
+
+        position: absolute;
+        width: 115px;
+        height: 115px;
+        left: 13px;
+        top: 10px;
+
+        background: url(image.png);
+        border-radius: 15px;
+    }
+
+    .mapInfo.Artist {
+
+        position: absolute;
+        width: 203.9px;
+        height: 18.71px;
+        left: 139px;
+        top: -2px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+
+    .mapInfo.SongName {
+
+        position: absolute;
+        width: 350px;
+        height: 32px;
+        left: 139px;
+        top: 15px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 30px;
+
+        color: #FFFFFF;
+
+    }
+
+
+    .mapInfo.Mapper {
+
+        position: absolute;
+        width: 309px;
+        height: 23px;
+        left: 139px;
+        top: 55px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+
+        color: #FFFFFF;
+
+    }
+
+    .mapInfo.Diff {
+
+        position: absolute;
+        width: 54.58px;
+        height: 16.76px;
+        left: 140px;
+        bottom: 00px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: left;
+
+        color: #FFFFFF;
+
+    }
+
+    .mapInfo.Diff.Background {
+
+        background: #00A6BD;
+        border-radius: 7px;
+        width: auto;
+        height: auto;
+        padding: 4px 10px 4px 10px;
+    }
+
+    .mapInfo.Key {
+
+        position: absolute;
+        width: 49.9px;
+        height: 18.71px;
+        right: 10px;
+        top: 0px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: right;
+
+        color: #FFFFFF;
+    }
+
+    .mapInfo.Time {
+
+        position: absolute;
+        width: 50px;
+        height: 19px;
+        right: 10px;
+        bottom: 0px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        text-align: right;
+
+        color: #FFFFFF;
+    }
+
+
+
+    .leftTeam.Picture {
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        left: 30px;
+        top: 15px;
+
+        background: url(leftteam.png);
+        border-radius: 15px;
+    }
+
+    .leftTeam.Name {
+        position: absolute;
+        width: 308px;
+        height: 130px;
+        left: 170px;
+        top: -5px;
+
+        font-family: 'Poppins';
+        font-style: bold;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        overflow-wrap: break-word;
+        overflow: hidden;
+
+        color: #FFFFFF;
+    }
+
+    .rightTeam.Picture {
+
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        left: 1760px;
+        top: 15px;
+
+        background: url(Longhorn.png);
+        border-radius: 15px;
+    }
+
+    .rightTeam.Name {
+        position: absolute;
+        width: 330px;
+        height: 130px;
+        right: 170px;
+        top: -5px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: right;
+        overflow-wrap: break-word;
+        overflow: hidden;
+
+        color: #FFFFFF;
+
+
+    }
+
+    .roundInfo {
+        position: absolute;
+        width: 89px;
+        height: 30px;
+        left: 915px;
+        top: -15px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+    }
+
+    .cvreLogo {
+        position: absolute;
+        width: 191px;
+        height: 86px;
+        left: 864px;
+        top: 42px;
+
+        background: url(cvrelogo.png);
+    }
+
+    .Team1Box1 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 787px;
+        top: 54px;
+
+        background: #FFFFFF;
+        border-radius: 12px;
+
+    }
+
+    .Team1Box2 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 710px;
+        top: 54px;
+
+        background: #343434;
+        border-radius: 12px;
+    }
+
+    .Team1Box3 {
+
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 633px;
+        top: 54px;
+
+        background: #343434;
+        border-radius: 12px;
+
+    }
+
+    .Team1Box4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 556px;
+        top: 54px;
+
+        background: #343434;
+        border-radius: 12px;
+
+    }
+
+    .Team2Box1 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 1078px;
+        top: 54px;
+
+        background: #FFFFFF;
+        border-radius: 12px;
+    }
+
+    .Team2Box2 {
+
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 1155px;
+        top: 54px;
+
+        background: #FFFFFF;
+        border-radius: 12px;
+    }
+
+    .Team2Box3 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 1232px;
+        top: 54px;
+
+        background: #343434;
+        border-radius: 12px;
+
+    }
+
+    .Team2Box4 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 1309px;
+        top: 54px;
+
+        background: #343434;
+        border-radius: 12px;
+    }
+
+
+    .grid {
+        display: grid;
+        grid-template-columns: var(--col);
+        grid-template-rows: var(--row);
+        position: absolute;
+        left: 94px;
+        top: 315px;
+        grid-gap: 35px;
+        align-content: center;
+    }
+
+
+    .mapInfo.Zero {
+        position: fixed;
+        left: 94px;
+        top: 315px;
+
+    }
+
+    .mapInfo.One {
+        position: fixed;
+        left: 683px;
+        top: 315px;
+
+    }
+
+    .mapInfo.Two {
+        position: fixed;
+        right: 94px;
+        top: 315px;
+
+    }
+
+
+
+    .mapInfo.Three {
+        position: fixed;
+        left: 94px;
+        top: 479px;
+
+    }
+
+    .mapInfo.Four {
+        position: fixed;
+        left: 683px;
+        top: 478px;
+
+
+    }
+
+    .mapInfo.Five {
+        position: fixed;
+        right: 94px;
+        top: 479px;
+
+    }
+
+
+
+    .mapInfo.Six {
+        position: fixed;
+        top: 643px;
+        left: 94px;
+
+    }
+
+    .mapInfo.Seven {
+        position: fixed;
+        top: 643px;
+        left: 683px;
+
+    }
+
+    .mapInfo.Eight {
+        position: fixed;
+        top: 643px;
+        right: 94px;
+
+    }
+
+    .PickOrBan {
+        animation: fadeIn;
+        animation-duration: 2s;
+        position: absolute;
+        bottom: -100px;
+        right: 0px;
+        width: 400px;
+        height: 400px;
+        z-index: -3;
+
+    }
+
+    .mapPoolName {
+
+        position: absolute;
+        width: 507px;
+        height: 57px;
+        left: 707px;
+        top: 231px;
+
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 60px;
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+</style>
+
+<body>
+
+    <p id="roundInfo" class="roundInfo">Finals</p>
+    <img id="cvreLogo" src="images/cvrelogo.png" class="cvreLogo">
+    <div class="leftTeam" id="Team1">
+        <img id="leftTeamImage" src="images/fallen.png" class="leftTeam Picture">
+        <h1 id="leftTeamName" class="leftTeam Name">Extra long team name lol</p>
+    </div>
+
+    <div class="rightTeam" id="Team2">
+        <img id="rightTeamImage" src="images/fallen.png" class="rightTeam Picture">
+        <h1 id="rightTeamName" class="rightTeam Name">Right Team</p>
+    </div>
+
+
+    <div class="Team1Box1"></div>
+    <div class="Team1Box2"></div>
+    <div class="Team1Box3"></div>
+    <div class="Team1Box4"></div>
+
+    <div class="Team2Box1"></div>
+    <div class="Team2Box2"></div>
+    <div class="Team2Box3"></div>
+    <div class="Team2Box4"></div>
+
+    <div class="mapPoolName">
+        <span id="mapPoolName">Division 2 Map Pool</span>
+
+    </div>
+
+
+    <div class="mapInfo Box Zero" id="song0">
+        <p id="SongArtist0" class="mapInfo Artist">Artist</p>
+        <p id="SongName0" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper0" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff0" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey0" class="mapInfo Key">Key</p>
+        <img id="pickBan0" src="" class="none">
+        <p id="SongTime0" class="mapInfo Time">9:27</p>
+        <img id="songCover0" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+
+    <div class="mapInfo Box One" id="song1">
+        <p id="SongArtist1" class="mapInfo Artist">Artist</p>
+        <p id="SongName1" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper1" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff1" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey1" class="mapInfo Key">Key</p>
+        <img id="pickBan1" src="" class="none">
+        <p id="SongTime1" class="mapInfo Time">9:27</p>
+        <img id="songCover1" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Two" id="song2">
+        <p id="SongArtist2" class="mapInfo Artist">Artist</p>
+        <p id="SongName2" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper2" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff2" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey2" class="mapInfo Key">Key</p>
+        <img id="pickBan2" src="" class="none">
+        <p id="SongTime2" class="mapInfo Time">9:27</p>
+        <img id="songCover2" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Three" id="song3">
+        <p id="SongArtist3" class="mapInfo Artist">Artist</p>
+        <p id="SongName3" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper3" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff3" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey3" class="mapInfo Key">Key</p>
+        <p id="SongTime3" class="mapInfo Time">9:27</p>
+        <img id="pickBan3" src="" class="none">
+        <img id="songCover3" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Four" id="song4">
+        <p id="SongArtist4" class="mapInfo Artist">Artist</p>
+        <p id="SongName4" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper4" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff4" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey4" class="mapInfo Key">Key</p>
+        <p id="SongTime4" class="mapInfo Time">9:27</p>
+        <img id="pickBan4" src="" class="none">
+        <img id="songCover4" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Five" id="song5">
+        <p id="SongArtist5" class="mapInfo Artist">Artist</p>
+        <p id="SongName5" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper5" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff5" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey5" class="mapInfo Key">Key</p>
+        <p id="SongTime5" class="mapInfo Time">9:27</p>
+        <img id="pickBan5" src="" class="none">
+        <img id="songCover5" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Six" id="song6">
+        <p id="SongArtist6" class="mapInfo Artist">Artist</p>
+        <p id="SongName6" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper6" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff6" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey6" class="mapInfo Key">Key</p>
+        <p id="SongTime6" class="mapInfo Time">9:27</p>
+        <img id="pickBan6" src="" class="none">
+        <img id="songCover6" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Seven" id="song7">
+        <p id="SongArtist7" class="mapInfo Artist">Artist</p>
+        <p id="SongName7" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper7" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff7" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey7" class="mapInfo Key">Key</p>
+        <img id="pickBan7" src="" class="none">
+        <p id="SongTime7" class="mapInfo Time">9:27</p>
+        <img id="songCover7" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+    <div class="mapInfo Box Eight" id="song8">
+        <p id="SongArtist8" class="mapInfo Artist">Artist</p>
+        <p id="SongName8" class="mapInfo SongName">Song Name</p>
+        <p id="SongMapper8" class="mapInfo Mapper">Mapper</p>
+        <p id="SongDiff8" class="mapInfo Diff Background">Diff</p>
+        <p id="SongKey8" class="mapInfo Key">Key</p>
+        <p id="SongTime8" class="mapInfo Time">9:27</p>
+        <img id="pickBan8" src="" class="none">
+        <img id="songCover8" src="images/nosongcover.png" class="mapInfo Cover">
+    </div>
+
+
+
+
+    </div>
+
+</body>
+
+<script>
+    function connect() {
+
+        sock = new WebSocket("ws://localhost:1337");
+        sock.onopen = function () {
+            console.log("Connected to BSTournamentHelper");
+        };
+
+        sock.onclose = function (e) {
+            console.log("Socket is closed. Reconnect attempt in 1 second");
+            setTimeout(function () {
+                connect();
+            }, 1000);
+        }
+
+        sock.onerror = function (err) {
+            console.log(err);
+            sock.close();
+        }
+        sock.onmessage = function (msg) {
+            let data = JSON.parse(msg.data);
+            console.log(data);
+
+            if (data.Event == "MatchData") {
+                MapPool = data.Data.MapPool + '';
+                Map0 = data.Data.Map0;
+                Map1 = data.Data.Map1;
+                Map2 = data.Data.Map2;
+                Map3 = data.Data.Map3;
+                Map4 = data.Data.Map4;
+                Map5 = data.Data.Map5;
+                Map6 = data.Data.Map6;
+                Map7 = data.Data.Map7;
+                Map8 = data.Data.Map8;
+                mapPoolUpdate();
+
+
+                caster1 = data.Data.Caster1;
+                caster2 = data.Data.Caster2;
+                caster1Name.innerText = caster1;
+                caster2Name.innerText = caster2;
+            }
+
+        }
+    }
+
+    function mapPoolUpdate() {
+        fetch(`https://beatkhana.com/api/tournament/2147484253/map-pools`)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+
+                console.log(data);
+                // Do stuff here
+                levelIDs = [];
+                levelNames = [];
+                levelArtists = [];
+                levelMappers = [];
+                levelDiffs = [];
+                levelHashes = [];
+                levelHashesLower = [];
+
+                var mapCount = 0;
+                mapPoolName.innerHTML = data[MapPool].poolName;
+
+
+
+                console.log(MapPool);
+                for (var i = 0; i < data[MapPool].songs.length; i++) {
+
+                    levelIDs.push(data[MapPool].songs[i].key);
+                    levelNames.push(data[MapPool].songs[i].name);
+                    levelArtists.push(data[MapPool].songs[i].songAuthor);
+                    levelMappers.push(data[MapPool].songs[i].levelAuthor);
+                    levelDiffs.push(data[MapPool].songs[i].diff);
+                    levelHashes.push(data[MapPool].songs[i].hash);
+
+                    levelHashesLower[i] = levelHashes[i].toLowerCase();
+
+                    mapCount = data[MapPool].songs.length;
+                    console.log(mapCount);
+
+
+
+
+                    // console.log(levelIDs[i]);
+                    // console.log(levelNames[i]);
+                    // console.log(levelArtists[i]);
+                    // console.log(levelMappers[i]);
+                    // console.log(levelHashes[i]);
+                    // console.log(levelHashesLower[i]);
+
+                    SongName = [];
+                    SongArtist = [];
+                    SongKey = [];
+                    SongMapper = [];
+                    SongDiff = [];
+                    SongHash = [];
+
+                    namePush();
+                    artistPush();
+                    keyPush();
+                    mapperPush();
+                    diffPush();
+                    coverPush();
+                    resetPositions();
+                    pickOrBan();
+
+                    //Map Count Fixing
+
+                    if (mapCount == 1) {
+
+                        document.getElementById("song1").style.display = "none";
+                        document.getElementById("song2").style.display = "none";
+                        document.getElementById("song3").style.display = "none";
+                        document.getElementById("song4").style.display = "none";
+                        document.getElementById("song5").style.display = "none";
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song0").style.left = "683px;";
+                    }
+                    if (mapCount == 2) {
+
+                        document.getElementById("song2").style.display = "none";
+                        document.getElementById("song3").style.display = "none";
+                        document.getElementById("song4").style.display = "none";
+                        document.getElementById("song5").style.display = "none";
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song0").style.left = "386px";
+                        document.getElementById("song1").style.left = "980px";
+                    }
+                    if (mapCount == 3) {
+
+                        document.getElementById("song3").style.display = "none";
+                        document.getElementById("song4").style.display = "none";
+                        document.getElementById("song5").style.display = "none";
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+                    }
+                    if (mapCount == 4) {
+
+                        document.getElementById("song4").style.display = "none";
+                        document.getElementById("song5").style.display = "none";
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song3").style.left = "683px";
+                    }
+                    if (mapCount == 5) {
+                        document.getElementById("song5").style.display = "none";
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song3").style.left = "386px";
+                        document.getElementById("song4").style.left = "980px";
+                    }
+                    if (mapCount == 6) {
+                        document.getElementById("song6").style.display = "none";
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+                    }
+                    if (mapCount == 7) {
+                        document.getElementById("song7").style.display = "none";
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song6").style.left = "683px";
+                    }
+                    if (mapCount == 8) {
+                        document.getElementById("song8").style.display = "none";
+
+                        document.getElementById("song6").style.left = "386px";
+                        document.getElementById("song7").style.left = "980px";
+                    }
+
+
+
+
+                    function resetPositions() {
+
+                        document.getElementById("song0").style.display = "";
+                        document.getElementById("song0").style.left = "94px";
+
+                        document.getElementById("song1").style.display = "";
+                        document.getElementById("song1").style.left = "683px";
+
+                        document.getElementById("song2").style.display = "";
+                        document.getElementById("song2").style.right = "94px";
+
+                        document.getElementById("song3").style.display = "";
+                        document.getElementById("song3").style.left = "94px";
+
+                        document.getElementById("song4").style.display = "";
+                        document.getElementById("song4").style.left = "683px";
+
+                        document.getElementById("song5").style.display = "";
+                        document.getElementById("song5").style.right = "94px";
+
+                        document.getElementById("song6").style.display = "";
+                        document.getElementById("song6").style.left = "94px";
+
+                        document.getElementById("song7").style.display = "";
+                        document.getElementById("song7").style.left = "683px";
+
+                        document.getElementById("song8").style.display = "";
+                        document.getElementById("song8").style.right = "94px";
+
+
+
+
+
+
+
+
+
+
+                    }
+                    //Song Names
+                    function namePush() {
+                        if (mapCount >= 1) {
+                            SongName.push(levelNames[0]);
+                            SongName0 = SongName.at(0);
+                            document.getElementById('SongName0').innerHTML = SongName0;
+                        }
+
+                        if (mapCount >= 2) {
+                            SongName.push(levelNames[1]);
+                            SongName1 = SongName.at(1);
+                            document.getElementById('SongName1').innerHTML = SongName1;
+                        }
+
+                        if (mapCount >= 3) {
+                            SongName.push(levelNames[2]);
+                            SongName2 = SongName.at(2);
+                            document.getElementById('SongName2').innerHTML = SongName2;
+                        }
+
+                        if (mapCount >= 4) {
+                            SongName.push(levelNames[3]);
+                            SongName3 = SongName.at(3);
+                            document.getElementById('SongName3').innerHTML = SongName3;
+                        }
+
+                        if (mapCount >= 5) {
+                            SongName.push(levelNames[4]);
+                            SongName4 = SongName.at(4);
+                            document.getElementById('SongName4').innerHTML = SongName4;
+                        }
+
+                        if (mapCount >= 6) {
+                            SongName.push(levelNames[5]);
+                            SongName5 = SongName.at(5);
+                            document.getElementById('SongName5').innerHTML = SongName5;
+                        }
+
+                        if (mapCount >= 7) {
+                            SongName.push(levelNames[6]);
+                            SongName6 = SongName.at(6);
+                            document.getElementById('SongName6').innerHTML = SongName6;
+                        }
+
+                        if (mapCount >= 8) {
+                            SongName.push(levelNames[7]);
+                            SongName7 = SongName.at(7);
+                            document.getElementById('SongName7').innerHTML = SongName7;
+                        }
+
+                        if (mapCount >= 9) {
+                            SongName.push(levelNames[8]);
+                            SongName8 = SongName.at(8);
+                            document.getElementById('SongName8').innerHTML = SongName8;
+                        }
+                    }
+
+                    //Song Artist
+
+                    function artistPush() {
+                        if (mapCount >= 1) {
+                            SongArtist.push(levelArtists[0]);
+                            SongArtist0 = SongArtist.at(0);
+                            document.getElementById('SongArtist0').innerHTML = SongArtist0;
+                        }
+
+                        if (mapCount >= 2) {
+                            SongArtist.push(levelArtists[1]);
+                            SongArtist1 = SongArtist.at(1);
+                            document.getElementById('SongArtist1').innerHTML = SongArtist1;
+                        }
+
+                        if (mapCount >= 3) {
+                            SongArtist.push(levelArtists[2]);
+                            SongArtist2 = SongArtist.at(2);
+                            document.getElementById('SongArtist2').innerHTML = SongArtist2;
+                        }
+
+                        if (mapCount >= 4) {
+                            SongArtist.push(levelArtists[3]);
+                            SongArtist3 = SongArtist.at(3);
+                            document.getElementById('SongArtist3').innerHTML = SongArtist3;
+                        }
+
+                        if (mapCount >= 5) {
+                            SongArtist.push(levelArtists[4]);
+                            SongArtist4 = SongArtist.at(4);
+                            document.getElementById('SongArtist4').innerHTML = SongArtist4;
+                        }
+
+                        if (mapCount >= 6) {
+                            SongArtist.push(levelArtists[5]);
+                            SongArtist5 = SongArtist.at(5);
+                            document.getElementById('SongArtist5').innerHTML = SongArtist5;
+                        }
+
+                        if (mapCount >= 7) {
+                            SongArtist.push(levelArtists[6]);
+                            SongArtist6 = SongArtist.at(6);
+                            document.getElementById('SongArtist6').innerHTML = SongArtist6;
+                        }
+
+                        if (mapCount >= 8) {
+                            SongArtist.push(levelArtists[7]);
+                            SongArtist7 = SongArtist.at(7);
+                            document.getElementById('SongArtist7').innerHTML = SongArtist7;
+                        }
+
+                        if (mapCount >= 9) {
+                            SongArtist.push(levelArtists[8]);
+                            SongArtist8 = SongArtist.at(8);
+                            document.getElementById('SongArtist8').innerHTML = SongArtist8;
+                        }
+                    }
+
+                    //Song Key
+                    function keyPush() {
+                        if (mapCount >= 1) {
+                            SongKey.push(levelIDs[0]);
+                            SongKey0 = SongKey.at(0);
+                            document.getElementById('SongKey0').innerHTML = SongKey0;
+                        }
+
+                        if (mapCount >= 2) {
+                            SongKey.push(levelIDs[1]);
+                            SongKey1 = SongKey.at(1);
+                            document.getElementById('SongKey1').innerHTML = SongKey1;
+                        }
+
+                        if (mapCount >= 3) {
+                            SongKey.push(levelIDs[2]);
+                            SongKey2 = SongKey.at(2);
+                            document.getElementById('SongKey2').innerHTML = SongKey2;
+                        }
+
+                        if (mapCount >= 4) {
+                            SongKey.push(levelIDs[3]);
+                            SongKey3 = SongKey.at(3);
+                            document.getElementById('SongKey3').innerHTML = SongKey3;
+                        }
+
+                        if (mapCount >= 5) {
+                            SongKey.push(levelIDs[4]);
+                            SongKey4 = SongKey.at(4);
+                            document.getElementById('SongKey4').innerHTML = SongKey4;
+                        }
+
+                        if (mapCount >= 6) {
+                            SongKey.push(levelIDs[5]);
+                            SongKey5 = SongKey.at(5);
+                            document.getElementById('SongKey5').innerHTML = SongKey5;
+                        }
+
+                        if (mapCount >= 7) {
+                            SongKey.push(levelIDs[6]);
+                            SongKey6 = SongKey.at(6);
+                            document.getElementById('SongKey6').innerHTML = SongKey6;
+                        }
+
+                        if (mapCount >= 8) {
+                            SongKey.push(levelIDs[7]);
+                            SongKey7 = SongKey.at(7);
+                            document.getElementById('SongKey7').innerHTML = SongKey7;
+                        }
+
+                        if (mapCount >= 9) {
+                            SongKey.push(levelIDs[8]);
+                            SongKey8 = SongKey.at(8);
+                            document.getElementById('SongKey8').innerHTML = SongKey8;
+                        }
+                    }
+
+                    // Song Mapper 
+                    function mapperPush() {
+                        if (mapCount >= 1) {
+                            SongMapper.push(levelMappers[0]);
+                            SongMapper0 = SongMapper.at(0);
+                            document.getElementById('SongMapper0').innerHTML = SongMapper0;
+                        }
+
+                        if (mapCount >= 2) {
+                            SongMapper.push(levelMappers[1]);
+                            SongMapper1 = SongMapper.at(1);
+                            document.getElementById('SongMapper1').innerHTML = SongMapper1;
+                        }
+
+                        if (mapCount >= 3) {
+                            SongMapper.push(levelMappers[2]);
+                            SongMapper2 = SongMapper.at(2);
+                            document.getElementById('SongMapper2').innerHTML = SongMapper2;
+                        }
+
+                        if (mapCount >= 4) {
+                            SongMapper.push(levelMappers[3]);
+                            SongMapper3 = SongMapper.at(3);
+                            document.getElementById('SongMapper3').innerHTML = SongMapper3;
+                        }
+
+                        if (mapCount >= 5) {
+                            SongMapper.push(levelMappers[4]);
+                            SongMapper4 = SongMapper.at(4);
+                            document.getElementById('SongMapper4').innerHTML = SongMapper4;
+                        }
+
+                        if (mapCount >= 6) {
+                            SongMapper.push(levelMappers[5]);
+                            SongMapper5 = SongMapper.at(5);
+                            document.getElementById('SongMapper5').innerHTML = SongMapper5;
+                        }
+
+                        if (mapCount >= 7) {
+                            SongMapper.push(levelMappers[6]);
+                            SongMapper6 = SongMapper.at(6);
+                            document.getElementById('SongMapper6').innerHTML = SongMapper6;
+                        }
+
+                        if (mapCount >= 8) {
+                            SongMapper.push(levelMappers[7]);
+                            SongMapper7 = SongMapper.at(7);
+                            document.getElementById('SongMapper7').innerHTML = SongMapper7;
+                        }
+
+                        if (mapCount >= 9) {
+                            SongMapper.push(levelMappers[8]);
+                            SongMapper8 = SongMapper.at(8);
+                            document.getElementById('SongMapper8').innerHTML = SongMapper8;
+                        }
+
+                    }
+
+                    // Song Diff
+                    function diffPush() {
+                        if (mapCount >= 1) {
+                            SongDiff.push(levelDiffs[0]);
+                            SongDiff0 = SongDiff.at(0);
+                            document.getElementById('SongDiff0').innerHTML = SongDiff0;
+                        }
+
+                        if (mapCount >= 2) {
+                            SongDiff.push(levelDiffs[1]);
+                            SongDiff1 = SongDiff.at(1);
+                            document.getElementById('SongDiff1').innerHTML = SongDiff1;
+                        }
+
+                        if (mapCount >= 3) {
+                            SongDiff.push(levelDiffs[2]);
+                            SongDiff2 = SongDiff.at(2);
+                            document.getElementById('SongDiff2').innerHTML = SongDiff2;
+                        }
+
+                        if (mapCount >= 4) {
+                            SongDiff.push(levelDiffs[3]);
+                            SongDiff3 = SongDiff.at(3);
+                            document.getElementById('SongDiff3').innerHTML = SongDiff3;
+                        }
+
+                        if (mapCount >= 5) {
+                            SongDiff.push(levelDiffs[4]);
+                            SongDiff4 = SongDiff.at(4);
+                            document.getElementById('SongDiff4').innerHTML = SongDiff4;
+                        }
+
+                        if (mapCount >= 6) {
+                            SongDiff.push(levelDiffs[5]);
+                            SongDiff5 = SongDiff.at(5);
+                            document.getElementById('SongDiff5').innerHTML = SongDiff5;
+                        }
+
+                        if (mapCount >= 7) {
+                            SongDiff.push(levelDiffs[6]);
+                            SongDiff6 = SongDiff.at(6);
+                            document.getElementById('SongDiff6').innerHTML = SongDiff6;
+                        }
+
+                        if (mapCount >= 8) {
+                            SongDiff.push(levelDiffs[7]);
+                            SongDiff7 = SongDiff.at(7);
+                            document.getElementById('SongDiff7').innerHTML = SongDiff7;
+                        }
+
+                        if (mapCount >= 9) {
+                            SongDiff.push(levelDiffs[8]);
+                            SongDiff8 = SongDiff.at(8);
+                            document.getElementById('SongDiff8').innerHTML = SongDiff8;
+                        }
+
+                    }
+                    // Song Cover
+                    function coverPush() {
+                        if (mapCount >= 1) {
+                            document.getElementById('songCover0').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(0) + ".jpg";
+                        }
+
+                        if (mapCount >= 2) {
+                            document.getElementById('songCover1').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(1) + ".jpg";
+                        }
+
+                        if (mapCount >= 3) {
+                            document.getElementById('songCover2').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(2) + ".jpg";
+                        }
+
+                        if (mapCount >= 4) {
+                            document.getElementById('songCover3').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(3) + ".jpg";
+                        }
+
+                        if (mapCount >= 5) {
+                            document.getElementById('songCover4').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(4) + ".jpg";
+                        }
+
+                        if (mapCount >= 6) {
+                            document.getElementById('songCover5').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(5) + ".jpg";
+                        }
+
+                        if (mapCount >= 7) {
+                            document.getElementById('songCover6').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(6) + ".jpg";
+                        }
+
+                        if (mapCount >= 8) {
+                            document.getElementById('songCover7').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(7) + ".jpg";
+                        }
+
+                        if (mapCount >= 9) {
+                            document.getElementById('songCover8').src = "https://na.cdn.beatsaver.com/" +
+                                levelHashesLower.at(8) + ".jpg";
+                        }
+
+
+                    }
+
+
+                }
+
+
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    function pickOrBan() {
+
+
+        if (Map0 != "default") {
+            document.getElementById('pickBan0').src = "images/" + Map0 + ".png";
+            document.getElementById("pickBan0").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan0').src = "";
+            document.getElementById("pickBan0").className = "none";
+        }
+
+        if (Map1 != "default") {
+            document.getElementById('pickBan1').src = "images/" + Map1 + ".png";
+            document.getElementById("pickBan1").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan1').src = "";
+            document.getElementById("pickBan1").className = "none";
+        }
+        if (Map2 != "default") {
+            document.getElementById('pickBan2').src = "images/" + Map2 + ".png";
+            document.getElementById("pickBan2").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan2').src = "";
+            document.getElementById("pickBan2").className = "none";
+        }
+        if (Map3 != "default") {
+            document.getElementById('pickBan3').src = "images/" + Map3 + ".png";
+            document.getElementById("pickBan3").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan3').src = "";
+            document.getElementById("pickBan3").className = "none";
+        }
+        if (Map4 != "default") {
+            document.getElementById('pickBan4').src = "images/" + Map4 + ".png";
+            document.getElementById("pickBan4").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan4').src = "";
+            document.getElementById("pickBan4").className = "none";
+        }
+        if (Map5 != "default") {
+            document.getElementById('pickBan5').src = "images/" + Map5 + ".png";
+            document.getElementById("pickBan5").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan5').src = "";
+            document.getElementById("pickBan5").className = "none";
+        }
+        if (Map6 != "default") {
+            document.getElementById('pickBan6').src = "images/" + Map6 + ".png";
+            document.getElementById("pickBan6").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan6').src = "";
+            document.getElementById("pickBan6").className = "none";
+        }
+        if (Map7 != "default") {
+            document.getElementById('pickBan7').src = "images/" + Map7 + ".png";
+            document.getElementById("pickBan7").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan7').src = "";
+            document.getElementById("pickBan7").className = "none";
+        }
+        if (Map8 != "default") {
+            document.getElementById('pickBan8').src = "images/" + Map8 + ".png";
+            document.getElementById("pickBan8").className = "PickOrBan";
+        } else {
+            document.getElementById('pickBan8').src = "";
+            document.getElementById("pickBan8").className = "none";
+        }
+
+
+
+
+
+
+
+
+    }
+
+    function returnLast(arr) {
+        return arr.at(-1);
+    }
+    connect();
+</script>
+
+
+
+
+</html>

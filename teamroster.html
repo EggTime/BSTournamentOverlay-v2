@@ -1,0 +1,507 @@
+<html>
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+
+        .leftTeam.Picture {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 30px;
+            top: 15px;
+
+            background: url(leftteam.png);
+            border-radius: 15px;
+        }
+
+        .leftTeam.Name {
+            position: absolute;
+            width: 308px;
+            height: 130px;
+            left: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: bold;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+        }
+
+        .rightTeam.Picture {
+
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 1760px;
+            top: 15px;
+
+            background: url(Longhorn.png);
+            border-radius: 15px;
+        }
+
+        .rightTeam.Name {
+            position: absolute;
+            width: 330px;
+            height: 130px;
+            right: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+
+
+        }
+
+        .roundInfo {
+            position: absolute;
+            width: 89px;
+            height: 30px;
+            left: 915px;
+            top: -15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+
+            color: #FFFFFF;
+
+        }
+
+        .cvreLogo {
+            position: absolute;
+            width: 191px;
+            height: 86px;
+            left: 864px;
+            top: 42px;
+
+            background: url(cvrelogo.png);
+        }
+
+        .Team1Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 787px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 710px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Team1Box3 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 633px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 556px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1078px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+        }
+
+        .Team2Box2 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1155px;
+            top: 54px;
+
+            background: #FFFFFF;
+            border-radius: 12px;
+        }
+
+        .Team2Box3 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1232px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1309px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .line {
+            position: absolute;
+            width: 0px;
+            height: 458px;
+            left: 959px;
+            top: 259px;
+
+            border: 2px solid #FFFFFF;
+
+        }
+
+        .playerInfo {
+
+            width: 448px;
+            height: 84px;
+
+
+        }
+
+        .playerInfo.team1Profile {
+            position: absolute;
+            width: 84px;
+            height: 84px;
+            left: 0px;
+            top: 0px;
+
+            background: url(noprofilepic.png);
+            border-radius: 17px;
+        }
+
+        .playerInfo.team1Name {
+            position: absolute;
+            width: 350px;
+            height: 60px;
+            left: 98px;
+            top: -33px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 60px;
+            /* identical to box height */
+
+
+            color: #FFFFFF;
+
+        }
+
+        .playerInfo.team1Rank {
+            position: absolute;
+            width: 101px;
+            height: 24px;
+            left: 98px;
+            top: 46px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            /* identical to box height */
+
+
+            color: #8D8D8D;
+        }
+
+
+
+
+
+        .playerInfo.team2Profile {
+            position: absolute;
+            width: 84px;
+            height: 84px;
+            right: 0px;
+            top: 0px;
+
+            background: url(noprofilepic.png);
+            border-radius: 17px;
+        }
+
+        .playerInfo.team2Name {
+            position: absolute;
+            width: 350px;
+            height: 60px;
+            right: 98px;
+            top: -33px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+            /* identical to box height */
+
+
+            color: #FFFFFF;
+
+        }
+
+        .playerInfo.team2Rank {
+            position: absolute;
+            width: 101px;
+            height: 24px;
+            right: 98px;
+            top: 46px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: right;
+            /* identical to box height */
+
+
+            color: #8D8D8D;
+        }
+
+        .team1Player1 {
+            position: absolute;
+            left: 30px;
+            top: 331px;
+        }
+
+        .team1Player2 {
+            position: absolute;
+            left: 495px;
+            top: 331px;
+        }
+
+        .team1Player3 {
+            position: absolute;
+            left: 30px;
+            top: 443px;
+        }
+
+        .team1Player4 {
+            position: absolute;
+            left: 495px;
+            top: 445px;
+        }
+
+        .team1Player5 {
+            position: absolute;
+            left: 30px;
+            top: 557px;
+        }
+
+        .team1Player6 {
+            position: absolute;
+            left: 495px;
+            top: 559px;
+        }
+
+
+
+        .team2Player1 {
+            position: absolute;
+            left: 966px;
+            top: 325px;
+        }
+
+        .team2Player2 {
+            position: absolute;
+            left: 1443px;
+            top: 325px;
+
+        }
+
+        .team2Player3 {
+            position: absolute;
+            left: 966px;
+            top: 441px;
+        }
+
+        .team2Player4 {
+            position: absolute;
+            left: 1443px;
+            top: 441px;
+        }
+
+        .team2Player5 {
+            position: absolute;
+            left: 966px;
+            top: 557px;
+        }
+
+        .team2Player6 {
+            position: absolute;
+            left: 1443px;
+            top: 557px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p id="roundInfo" class="roundInfo">Finals</p>
+    <img id="cvreLogo" src="images/cvrelogo.png" class="cvreLogo">
+    <div class="leftTeam" id="Team1">
+        <img id="leftTeamImage" src="images/fallen.png" class="leftTeam Picture">
+        <h1 id="leftTeamName" class="leftTeam Name">Extra long team name lol</p>
+    </div>
+
+    <div class="rightTeam" id="Team2">
+        <img id="rightTeamImage" src="images/fallen.png" class="rightTeam Picture">
+        <h1 id="rightTeamName" class="rightTeam Name">Right Team</p>
+    </div>
+
+
+    <div class="Team1Box1"></div>
+    <div class="Team1Box2"></div>
+    <div class="Team1Box3"></div>
+    <div class="Team1Box4"></div>
+
+    <div class="Team2Box1"></div>
+    <div class="Team2Box2"></div>
+    <div class="Team2Box3"></div>
+    <div class="Team2Box4"></div>
+
+    <div class="line"></div>
+
+
+
+
+    <div class="playerInfo team1Player1" id="team1Player1">
+        <p id="team1Player1Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player1Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player1Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+    <div class="playerInfo team1Player2" id="team1Player2">
+        <p id="team1Player2Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player2Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player2Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+    <div class="playerInfo team1Player3" id="team1Player3">
+        <p id="team1Player3Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player3Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player3Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+    <div class="playerInfo team1Player4" id="team1Player4">
+        <p id="team1Player4Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player4Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player4Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+    <div class="playerInfo team1Player5" id="team1Player5">
+        <p id="team1Player5Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player5Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player5Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+    <div class="playerInfo team1Player6" id="team1Player6">
+        <p id="team1Player6Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player6Rank" class="playerInfo team1Rank">#0,000</p>
+        <img id="team1Player6Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
+    </div>
+
+
+
+    <div class="playerInfo team2Player1" id="team2Player1">
+        <p id="team2Player1Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player1Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player1Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+    
+    <div class="playerInfo team2Player2" id="team2Player2">
+        <p id="team2Player2Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player2Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player2Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+    <div class="playerInfo team2Player3" id="team2Player3">
+        <p id="team2Player3Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player3Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player3Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+    <div class="playerInfo team2Player4" id="team2Player4">
+        <p id="team2Player4Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player4Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player4Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+    <div class="playerInfo team2Player5" id="team2Player5">
+        <p id="team2Player5Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player5Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player5Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+    <div class="playerInfo team2Player6" id="team2Player6">
+        <p id="team2Player6Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player6Rank" class="playerInfo team2Rank">#0,000</p>
+        <img id="team2Player6Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
+    </div>
+
+
+
+
+
+
+</body>
+
+<script>
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
