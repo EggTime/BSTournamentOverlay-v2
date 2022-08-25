@@ -1,14 +1,15 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 
 
 </head>
 
 <style>
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
     .mapInfo.Box {
         box-sizing: border-box;
         width: 554px;
@@ -17,20 +18,62 @@
         background: rgba(0, 166, 189, 0.30);
         border: 4px solid #00A6BD;
         border-radius: 24px;
+        transition-duration: 1s;
     }
+
+    .mapInfo.Box.Easy {
+        background: rgba(3, 154, 0, 0.17);
+        border: 4px solid #039A00;
+        border-radius: 24px;
+    }
+
+    .mapInfo.Box.Normal {
+        background: rgba(0, 166, 189, 0.17);
+        border: 4px solid #00A6BD;
+        border-radius: 24px;
+    }
+
+    .mapInfo.Box.Hard {
+        background: rgba(255, 138, 0, 0.17);
+        border: 4px solid #FF8A00;
+        border-radius: 24px;
+    }
+
+    .mapInfo.Box.Expert {
+        background: rgba(144, 0, 0, 0.17);
+        border: 4px solid #910000;
+        border-radius: 24px;
+    }
+
+    .mapInfo.Box.ExpertPlus {
+        background: rgba(174, 0, 177, 0.17);
+        border: 4px solid #AE00B1;
+        border-radius: 24px;
+    }
+
 
     .mapInfo.Cover {
 
         position: absolute;
         width: 115px;
         height: 115px;
-        left: 13px;
-        top: 10px;
+        left: 15px;
+        top: 15px;
 
         background: url(image.png);
         border-radius: 15px;
     }
-
+    .mapInfo.Cover.PickOrBan {
+        background: url(image.png);
+        width: 115px;
+        height: 115px;
+        left: 15px;
+        top: 15px;
+        border-radius: 15px;
+        z-index: 10;
+        transition-duration: 1s;
+        display: none;
+    }
     .mapInfo.Artist {
 
         position: absolute;
@@ -90,7 +133,7 @@
         width: 54.58px;
         height: 16.76px;
         left: 140px;
-        bottom: 00px;
+        bottom: 7px;
 
         font-family: 'Poppins';
         font-style: normal;
@@ -112,6 +155,41 @@
         padding: 4px 10px 4px 10px;
     }
 
+    .mapInfo.Diff.Background.Easy {
+
+        background: #039A00;
+
+    }
+
+    .mapInfo.Diff.Background.Normal {
+
+        background: #00A6BD;
+
+    }
+
+    .mapInfo.Diff.Background.Hard {
+
+        background: #FF8A00;
+
+    }
+
+    .mapInfo.Diff.Background.Expert {
+
+        background: #900000;
+
+    }
+
+    .mapInfo.Diff.Background.ExpertPlus {
+
+        background: #AE00B1;
+
+    }
+
+
+
+
+
+
     .mapInfo.Key {
 
         position: absolute;
@@ -132,6 +210,7 @@
 
     .mapInfo.Time {
 
+        display: none;
         position: absolute;
         width: 50px;
         height: 19px;
@@ -347,21 +426,21 @@
     }
 
 
-    .mapInfo.Zero {
+    .song.Zero {
         position: fixed;
         left: 94px;
         top: 315px;
 
     }
 
-    .mapInfo.One {
+    .song.One {
         position: fixed;
         left: 683px;
         top: 315px;
 
     }
 
-    .mapInfo.Two {
+    .song.Two {
         position: fixed;
         right: 94px;
         top: 315px;
@@ -370,14 +449,14 @@
 
 
 
-    .mapInfo.Three {
+    .song.Three {
         position: fixed;
         left: 94px;
         top: 479px;
 
     }
 
-    .mapInfo.Four {
+    .song.Four {
         position: fixed;
         left: 683px;
         top: 478px;
@@ -385,7 +464,7 @@
 
     }
 
-    .mapInfo.Five {
+    .song.Five {
         position: fixed;
         right: 94px;
         top: 479px;
@@ -394,21 +473,21 @@
 
 
 
-    .mapInfo.Six {
+    .song.Six {
         position: fixed;
         top: 643px;
         left: 94px;
 
     }
 
-    .mapInfo.Seven {
+    .song.Seven {
         position: fixed;
         top: 643px;
         left: 683px;
 
     }
 
-    .mapInfo.Eight {
+    .song.Eight {
         position: fixed;
         top: 643px;
         right: 94px;
@@ -419,12 +498,10 @@
         animation: fadeIn;
         animation-duration: 2s;
         position: absolute;
-        bottom: -100px;
-        right: 0px;
-        width: 400px;
-        height: 400px;
-        z-index: -3;
-
+        width: 562px;
+        height: 153px;
+        right: -4px;
+        top: -4px;
     }
 
     .mapPoolName {
@@ -477,104 +554,131 @@
     </div>
 
 
-    <div class="mapInfo Box Zero" id="song0">
-        <p id="SongArtist0" class="mapInfo Artist">Artist</p>
-        <p id="SongName0" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper0" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff0" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey0" class="mapInfo Key">Key</p>
-        <img id="pickBan0" src="" class="none">
-        <p id="SongTime0" class="mapInfo Time">9:27</p>
-        <img id="songCover0" src="images/nosongcover.png" class="mapInfo Cover">
+    <div class="song Zero" id="song0">
+        <div class="mapInfo Box" id="song0Box">
+            <p id="SongArtist0" class="mapInfo Artist">Artist</p>
+            <p id="SongName0" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper0" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff0" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey0" class="mapInfo Key">Key</p>
+            <p id="SongTime0" class="mapInfo Time">9:27</p>
+            <img id="songCover0PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover0" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-
-    <div class="mapInfo Box One" id="song1">
-        <p id="SongArtist1" class="mapInfo Artist">Artist</p>
-        <p id="SongName1" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper1" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff1" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey1" class="mapInfo Key">Key</p>
+    <div class="song One" id="song1">
         <img id="pickBan1" src="" class="none">
-        <p id="SongTime1" class="mapInfo Time">9:27</p>
-        <img id="songCover1" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song1Box">
+            <p id="SongArtist1" class="mapInfo Artist">Artist</p>
+            <p id="SongName1" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper1" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff1" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey1" class="mapInfo Key">Key</p>
+            <p id="SongTime1" class="mapInfo Time">9:27</p>
+            <img id="songCover1PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover1" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Two" id="song2">
-        <p id="SongArtist2" class="mapInfo Artist">Artist</p>
-        <p id="SongName2" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper2" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff2" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey2" class="mapInfo Key">Key</p>
+    <div class="song Two" id="song2">
         <img id="pickBan2" src="" class="none">
-        <p id="SongTime2" class="mapInfo Time">9:27</p>
-        <img id="songCover2" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song2Box">
+            <p id="SongArtist2" class="mapInfo Artist">Artist</p>
+            <p id="SongName2" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper2" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff2" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey2" class="mapInfo Key">Key</p>
+            <p id="SongTime2" class="mapInfo Time">9:27</p>
+            <img id="songCover2PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover2" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Three" id="song3">
-        <p id="SongArtist3" class="mapInfo Artist">Artist</p>
-        <p id="SongName3" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper3" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff3" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey3" class="mapInfo Key">Key</p>
-        <p id="SongTime3" class="mapInfo Time">9:27</p>
+
+
+    <div class="song Three" id="song3">
         <img id="pickBan3" src="" class="none">
-        <img id="songCover3" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song3Box">
+            <p id="SongArtist3" class="mapInfo Artist">Artist</p>
+            <p id="SongName3" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper3" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff3" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey3" class="mapInfo Key">Key</p>
+            <p id="SongTime3" class="mapInfo Time">9:27</p>
+            <img id="songCover3PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover3" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Four" id="song4">
-        <p id="SongArtist4" class="mapInfo Artist">Artist</p>
-        <p id="SongName4" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper4" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff4" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey4" class="mapInfo Key">Key</p>
-        <p id="SongTime4" class="mapInfo Time">9:27</p>
+    <div class="song Four" id="song4">
         <img id="pickBan4" src="" class="none">
-        <img id="songCover4" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song4Box">
+            <p id="SongArtist4" class="mapInfo Artist">Artist</p>
+            <p id="SongName4" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper4" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff4" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey4" class="mapInfo Key">Key</p>
+            <p id="SongTime4" class="mapInfo Time">9:27</p>
+            <img id="songCover4PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover4" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Five" id="song5">
-        <p id="SongArtist5" class="mapInfo Artist">Artist</p>
-        <p id="SongName5" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper5" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff5" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey5" class="mapInfo Key">Key</p>
-        <p id="SongTime5" class="mapInfo Time">9:27</p>
+    <div class="song Five" id="song5">
         <img id="pickBan5" src="" class="none">
-        <img id="songCover5" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song5Box">
+            <p id="SongArtist5" class="mapInfo Artist">Artist</p>
+            <p id="SongName5" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper5" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff5" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey5" class="mapInfo Key">Key</p>
+            <p id="SongTime5" class="mapInfo Time">9:27</p>
+            <img id="songCover5PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover5" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Six" id="song6">
-        <p id="SongArtist6" class="mapInfo Artist">Artist</p>
-        <p id="SongName6" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper6" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff6" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey6" class="mapInfo Key">Key</p>
-        <p id="SongTime6" class="mapInfo Time">9:27</p>
+    <div class="song Six" id="song6">
         <img id="pickBan6" src="" class="none">
-        <img id="songCover6" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song6Box">
+            <p id="SongArtist6" class="mapInfo Artist">Artist</p>
+            <p id="SongName6" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper6" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff6" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey6" class="mapInfo Key">Key</p>
+            <p id="SongTime6" class="mapInfo Time">9:27</p>
+            <img id="songCover6PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover6" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Seven" id="song7">
-        <p id="SongArtist7" class="mapInfo Artist">Artist</p>
-        <p id="SongName7" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper7" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff7" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey7" class="mapInfo Key">Key</p>
+    <div class="song Seven" id="song7">
         <img id="pickBan7" src="" class="none">
-        <p id="SongTime7" class="mapInfo Time">9:27</p>
-        <img id="songCover7" src="images/nosongcover.png" class="mapInfo Cover">
+        <div class="mapInfo Box" id="song7Box">
+            <p id="SongArtist7" class="mapInfo Artist">Artist</p>
+            <p id="SongName7" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper7" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff7" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey7" class="mapInfo Key">Key</p>
+            <p id="SongTime7" class="mapInfo Time">9:27</p>
+            <img id="songCover7PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover7" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
-    <div class="mapInfo Box Eight" id="song8">
-        <p id="SongArtist8" class="mapInfo Artist">Artist</p>
-        <p id="SongName8" class="mapInfo SongName">Song Name</p>
-        <p id="SongMapper8" class="mapInfo Mapper">Mapper</p>
-        <p id="SongDiff8" class="mapInfo Diff Background">Diff</p>
-        <p id="SongKey8" class="mapInfo Key">Key</p>
-        <p id="SongTime8" class="mapInfo Time">9:27</p>
-        <img id="pickBan8" src="" class="none">
-        <img id="songCover8" src="images/nosongcover.png" class="mapInfo Cover">
+    <div class="song Eight" id="song8">
+        <div class="mapInfo Box" id="song8Box">
+            <img id="pickBan8" src="" class="none">
+            <p id="SongArtist8" class="mapInfo Artist">Artist</p>
+            <p id="SongName8" class="mapInfo SongName">Song Name</p>
+            <p id="SongMapper8" class="mapInfo Mapper">Mapper</p>
+            <p id="SongDiff8" class="mapInfo Diff Background">Diff</p>
+            <p id="SongKey8" class="mapInfo Key">Key</p>
+            <p id="SongTime8" class="mapInfo Time">9:27</p>
+            <img id="songCover8PB" src="images/default.png" class="mapInfo Cover PickOrBan">
+            <img id="songCover8" src="images/nosongcover.png" class="mapInfo Cover">
+        </div>
     </div>
 
 
@@ -585,12 +689,30 @@
 </body>
 
 <script>
+    var Map0 = "default";
+    var Map1 = "default";
+    var Map2 = "default";
+    var Map3 = "default";
+    var Map4 = "default";
+    var Map5 = "default";
+    var Map6 = "default";
+    var Map7 = "default";
+    var Map8 = "default";
+
+
+
+
+
+
+
     function connect() {
 
         sock = new WebSocket("ws://localhost:1337");
         sock.onopen = function () {
             console.log("Connected to BSTournamentHelper");
         };
+        MapPool = 357;
+        mapPoolUpdate();
 
         sock.onclose = function (e) {
             console.log("Socket is closed. Reconnect attempt in 1 second");
@@ -608,6 +730,7 @@
             console.log(data);
 
             if (data.Event == "MatchData") {
+                console.log(data.Data);
                 MapPool = data.Data.MapPool + '';
                 Map0 = data.Data.Map0;
                 Map1 = data.Data.Map1;
@@ -619,19 +742,13 @@
                 Map7 = data.Data.Map7;
                 Map8 = data.Data.Map8;
                 mapPoolUpdate();
-
-
-                caster1 = data.Data.Caster1;
-                caster2 = data.Data.Caster2;
-                caster1Name.innerText = caster1;
-                caster2Name.innerText = caster2;
             }
 
         }
     }
 
     function mapPoolUpdate() {
-        fetch(`https://beatkhana.com/api/tournament/2147484253/map-pools`)
+        fetch(`https://beatkhana.com/api/tournament/2147484261/map-pools`)
             .then(response => {
                 return response.json()
             })
@@ -1045,54 +1162,101 @@
                             SongDiff.push(levelDiffs[0]);
                             SongDiff0 = SongDiff.at(0);
                             document.getElementById('SongDiff0').innerHTML = SongDiff0;
+                            if (SongDiff0 == "Expert+") {
+                                SongDiff0 = "ExpertPlus"
+                            };
+                            document.getElementById("song0Box").classList.add(SongDiff0);
+                            document.getElementById("SongDiff0").classList.add(SongDiff0);
+
                         }
 
                         if (mapCount >= 2) {
                             SongDiff.push(levelDiffs[1]);
                             SongDiff1 = SongDiff.at(1);
                             document.getElementById('SongDiff1').innerHTML = SongDiff1;
+                            if (SongDiff1 == "Expert+") {
+                                SongDiff1 = "ExpertPlus";
+                            };
+                            document.getElementById("song1Box").classList.add(SongDiff1);
+                            document.getElementById("SongDiff1").classList.add(SongDiff1);
+                            //
                         }
 
                         if (mapCount >= 3) {
                             SongDiff.push(levelDiffs[2]);
                             SongDiff2 = SongDiff.at(2);
                             document.getElementById('SongDiff2').innerHTML = SongDiff2;
+                            if (SongDiff2 == "Expert+") {
+                                SongDiff2 = "ExpertPlus";
+                            };
+                            document.getElementById("song2Box").classList.add(SongDiff2);
+                            document.getElementById("SongDiff2").classList.add(SongDiff2);
                         }
 
                         if (mapCount >= 4) {
                             SongDiff.push(levelDiffs[3]);
                             SongDiff3 = SongDiff.at(3);
                             document.getElementById('SongDiff3').innerHTML = SongDiff3;
+                            if (SongDiff3 == "Expert+") {
+                                SongDiff3 = "ExpertPlus";
+                            };
+                            document.getElementById("song3Box").classList.add(SongDiff3);
+                            document.getElementById("SongDiff3").classList.add(SongDiff3);
                         }
 
                         if (mapCount >= 5) {
                             SongDiff.push(levelDiffs[4]);
                             SongDiff4 = SongDiff.at(4);
                             document.getElementById('SongDiff4').innerHTML = SongDiff4;
+                            if (SongDiff4 == "Expert+") {
+                                SongDiff4 = "ExpertPlus";
+                            };
+                            document.getElementById("song4Box").classList.add(SongDiff4);
+                            document.getElementById("SongDiff4").classList.add(SongDiff4);
                         }
 
                         if (mapCount >= 6) {
                             SongDiff.push(levelDiffs[5]);
                             SongDiff5 = SongDiff.at(5);
                             document.getElementById('SongDiff5').innerHTML = SongDiff5;
+                            if (SongDiff5 == "Expert+") {
+                                SongDiff5 = "ExpertPlus";
+                            };
+                            document.getElementById("song5Box").classList.add(SongDiff5);
+                            document.getElementById("SongDiff5").classList.add(SongDiff5);
                         }
 
                         if (mapCount >= 7) {
                             SongDiff.push(levelDiffs[6]);
                             SongDiff6 = SongDiff.at(6);
                             document.getElementById('SongDiff6').innerHTML = SongDiff6;
+                            if (SongDiff6 == "Expert+") {
+                                SongDiff6 = "ExpertPlus";
+                            };
+                            document.getElementById("song6Box").classList.add(SongDiff6);
+                            document.getElementById("SongDiff6").classList.add(SongDiff6);
                         }
 
                         if (mapCount >= 8) {
                             SongDiff.push(levelDiffs[7]);
                             SongDiff7 = SongDiff.at(7);
                             document.getElementById('SongDiff7').innerHTML = SongDiff7;
+                            if (SongDiff7 == "Expert+") {
+                                SongDiff7 = "ExpertPlus";
+                            };
+                            document.getElementById("song7Box").classList.add(SongDiff7);
+                            document.getElementById("SongDiff7").classList.add(SongDiff7);
                         }
 
                         if (mapCount >= 9) {
                             SongDiff.push(levelDiffs[8]);
                             SongDiff8 = SongDiff.at(8);
                             document.getElementById('SongDiff8').innerHTML = SongDiff8;
+                            if (SongDiff8 == "Expert+") {
+                                SongDiff8 = "ExpertPlus";
+                            };
+                            document.getElementById("song8Box").classList.add(SongDiff8);
+                            document.getElementById("SongDiff8").classList.add(SongDiff8);
                         }
 
                     }
@@ -1159,71 +1323,189 @@
 
     function pickOrBan() {
 
-
+        const pick = `border: 8px solid #00FF28;`;
+        const ban = `border: 8px solid #FF0000;`;
         if (Map0 != "default") {
-            document.getElementById('pickBan0').src = "images/" + Map0 + ".png";
-            document.getElementById("pickBan0").className = "PickOrBan";
+            if (Map0 === "pick") {
+                document.getElementById("song0Box").style = pick;
+                document.getElementById('songCover0PB').style = "display: none;"
+                document.getElementById('songCover0PB').src = "images/" + Map0 + ".png";
+                document.getElementById('songCover0PB').style = "display: block;"
+            }
+            if (Map0 === "ban") {
+                document.getElementById("song0Box").style = ban;
+                document.getElementById('songCover0PB').style = "display: none;"
+                document.getElementById('songCover0PB').src = "images/" + Map0 + ".png";
+                document.getElementById('songCover0PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan0').src = "";
-            document.getElementById("pickBan0").className = "none";
+            document.getElementById("song0Box").style.border = "";
+            document.getElementById('songCover0PB').style = "display: none;"
+            document.getElementById('songCover0PB').src = "images/" + Map0 + ".png";
+        }
+        
+        if (Map1 != "default") {
+            if (Map1 === "pick") {
+                document.getElementById("song1Box").style = pick;
+                document.getElementById('songCover1PB').style = "display: none;"
+                document.getElementById('songCover1PB').src = "images/" + Map1 + ".png";
+                document.getElementById('songCover1PB').style = "display: block;"
+            }
+            if (Map1 === "ban") {
+                document.getElementById("song1Box").style = ban;
+                document.getElementById('songCover1PB').style = "display: none;"
+                document.getElementById('songCover1PB').src = "images/" + Map1 + ".png";
+                document.getElementById('songCover1PB').style = "display: block;"
+
+            }
+        } else {
+            document.getElementById("song1Box").style.border = "";
+            document.getElementById('songCover1PB').style = "display: none;"
+            document.getElementById('songCover1PB').src = "images/" + Map1 + ".png";
         }
 
-        if (Map1 != "default") {
-            document.getElementById('pickBan1').src = "images/" + Map1 + ".png";
-            document.getElementById("pickBan1").className = "PickOrBan";
-        } else {
-            document.getElementById('pickBan1').src = "";
-            document.getElementById("pickBan1").className = "none";
-        }
         if (Map2 != "default") {
-            document.getElementById('pickBan2').src = "images/" + Map2 + ".png";
-            document.getElementById("pickBan2").className = "PickOrBan";
+            if (Map2 === "pick") {
+                document.getElementById("song2Box").style = pick;
+                document.getElementById('songCover2PB').style = "display: none;"
+                document.getElementById('songCover2PB').src = "images/" + Map2 + ".png";
+                document.getElementById('songCover2PB').style = "display: block;"
+            }
+            if (Map2 === "ban") {
+                document.getElementById("song2Box").style = ban;
+                document.getElementById('songCover2PB').style = "display: none;"
+                document.getElementById('songCover2PB').src = "images/" + Map2 + ".png";
+                document.getElementById('songCover2PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan2').src = "";
-            document.getElementById("pickBan2").className = "none";
+            document.getElementById("song2Box").style.border = "";
+            document.getElementById('songCover2PB').style = "display: none;"
+            document.getElementById('songCover2PB').src = "images/" + Map2 + ".png";
         }
+
         if (Map3 != "default") {
-            document.getElementById('pickBan3').src = "images/" + Map3 + ".png";
-            document.getElementById("pickBan3").className = "PickOrBan";
+            if (Map3 === "pick") {
+                document.getElementById("song3Box").style = pick;
+                document.getElementById('songCover3PB').style = "display: none;"
+                document.getElementById('songCover3PB').src = "images/" + Map3 + ".png";
+                document.getElementById('songCover3PB').style = "display: block;"
+            }
+            if (Map3 === "ban") {
+                document.getElementById("song3Box").style = ban;
+                document.getElementById('songCover3PB').style = "display: none;"
+                document.getElementById('songCover3PB').src = "images/" + Map3 + ".png";
+                document.getElementById('songCover3PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan3').src = "";
-            document.getElementById("pickBan3").className = "none";
+            document.getElementById("song3Box").style.border = "";
+            document.getElementById('songCover3PB').style = "display: none;"
+            document.getElementById('songCover3PB').src = "images/" + Map3 + ".png";
         }
+        
         if (Map4 != "default") {
-            document.getElementById('pickBan4').src = "images/" + Map4 + ".png";
-            document.getElementById("pickBan4").className = "PickOrBan";
+            if (Map4 === "pick") {
+                document.getElementById("song4Box").style = pick;
+                document.getElementById('songCover4PB').style = "display: none;"
+                document.getElementById('songCover4PB').src = "images/" + Map4 + ".png";
+                document.getElementById('songCover4PB').style = "display: block;"
+            }
+            if (Map4 === "ban") {
+                document.getElementById("song4Box").style = ban;
+                document.getElementById('songCover4PB').style = "display: none;"
+                document.getElementById('songCover4PB').src = "images/" + Map4 + ".png";
+                document.getElementById('songCover4PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan4').src = "";
-            document.getElementById("pickBan4").className = "none";
+            document.getElementById("song4Box").style.border = "";
+            document.getElementById('songCover4PB').style = "display: none;"
+            document.getElementById('songCover4PB').src = "images/" + Map4 + ".png";
         }
+        
         if (Map5 != "default") {
-            document.getElementById('pickBan5').src = "images/" + Map5 + ".png";
-            document.getElementById("pickBan5").className = "PickOrBan";
+            if (Map5 === "pick") {
+                document.getElementById("song5Box").style = pick;
+                document.getElementById('songCover5PB').style = "display: none;"
+                document.getElementById('songCover5PB').src = "images/" + Map5 + ".png";
+                document.getElementById('songCover5PB').style = "display: block;"
+            }
+            if (Map5 === "ban") {
+                document.getElementById("song5Box").style = ban;
+                document.getElementById('songCover5PB').style = "display: none;"
+                document.getElementById('songCover5PB').src = "images/" + Map5 + ".png";
+                document.getElementById('songCover5PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan5').src = "";
-            document.getElementById("pickBan5").className = "none";
+            document.getElementById("song5Box").style.border = "";
+            document.getElementById('songCover5PB').style = "display: none;"
+            document.getElementById('songCover5PB').src = "images/" + Map5 + ".png";
         }
+        
         if (Map6 != "default") {
-            document.getElementById('pickBan6').src = "images/" + Map6 + ".png";
-            document.getElementById("pickBan6").className = "PickOrBan";
+            if (Map6 === "pick") {
+                document.getElementById("song6Box").style = pick;
+                document.getElementById('songCover6PB').style = "display: none;"
+                document.getElementById('songCover6PB').src = "images/" + Map6 + ".png";
+                document.getElementById('songCover6PB').style = "display: block;"
+            }
+            if (Map6 === "ban") {
+                document.getElementById("song6Box").style = ban;
+                document.getElementById('songCover6PB').style = "display: none;"
+                document.getElementById('songCover6PB').src = "images/" + Map6 + ".png";
+                document.getElementById('songCover6PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan6').src = "";
-            document.getElementById("pickBan6").className = "none";
+            document.getElementById("song6Box").style.border = "";
+            document.getElementById('songCover6PB').style = "display: none;"
+            document.getElementById('songCover6PB').src = "images/" + Map6 + ".png";
         }
+        
         if (Map7 != "default") {
-            document.getElementById('pickBan7').src = "images/" + Map7 + ".png";
-            document.getElementById("pickBan7").className = "PickOrBan";
+            if (Map7 === "pick") {
+                document.getElementById("song7Box").style = pick;
+                document.getElementById('songCover7PB').style = "display: none;"
+                document.getElementById('songCover7PB').src = "images/" + Map7 + ".png";
+                document.getElementById('songCover7PB').style = "display: block;"
+            }
+            if (Map7 === "ban") {
+                document.getElementById("song7Box").style = ban;
+                document.getElementById('songCover7PB').style = "display: none;"
+                document.getElementById('songCover7PB').src = "images/" + Map7 + ".png";
+                document.getElementById('songCover7PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan7').src = "";
-            document.getElementById("pickBan7").className = "none";
+            document.getElementById("song7Box").style.border = "";
+            document.getElementById('songCover7PB').style = "display: none;"
+            document.getElementById('songCover7PB').src = "images/" + Map7 + ".png";
         }
+        
         if (Map8 != "default") {
-            document.getElementById('pickBan8').src = "images/" + Map8 + ".png";
-            document.getElementById("pickBan8").className = "PickOrBan";
+            if (Map8 === "pick") {
+                document.getElementById("song8Box").style = pick;
+                document.getElementById('songCover8PB').style = "display: none;"
+                document.getElementById('songCover8PB').src = "images/" + Map8 + ".png";
+                document.getElementById('songCover8PB').style = "display: block;"
+            }
+            if (Map8 === "ban") {
+                document.getElementById("song8Box").style = ban;
+                document.getElementById('songCover8PB').style = "display: none;"
+                document.getElementById('songCover8PB').src = "images/" + Map8 + ".png";
+                document.getElementById('songCover8PB').style = "display: block;"
+
+            }
         } else {
-            document.getElementById('pickBan8').src = "";
-            document.getElementById("pickBan8").className = "none";
+            document.getElementById("song8Box").style.border = "";
+            document.getElementById('songCover8PB').style = "display: none;"
+            document.getElementById('songCover8PB').src = "images/" + Map8 + ".png";
         }
+        
+
 
 
 

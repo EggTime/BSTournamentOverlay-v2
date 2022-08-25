@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <title>Controller Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+    body,
+    html {
+        background-color: rgb(34, 34, 34);
+    }
+
+    body,
+    p,
+    input,
+    select,
+    textarea,
+    button {
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+        color: white;
+
+    }
+
+    div,
+    p {
+        color: #BABECC;
+        text-shadow: 1px 1px 1px #FFF;
+    }
+
+
+    form {
+        padding: 16px;
+        width: 16px*20;
+        margin: 0 auto;
+    }
+
+    .segment {
+        padding: 16px*2 0;
+        text-align: center;
+    }
+
+    button,
+    input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        border-radius: 16px*20;
+        padding: 16px;
+        background-color: EBECF0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 16px*1.5;
+        width: 100%;
+    }
+
+    .input {
+        margin-right: 16px/2;
+        background: rgb(48, 48, 48);
+        box-shadow: inset 2px 2px 5px #444444, inset -5px -5px 10px rgb(48, 48, 48);
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+
+    }
+
+    .long {
+
+        width: 300px;
+
+
+    }
+
+    .number {
+        width: 10px;
+    }
+
+    button {
+        color: #61677C;
+        font-weight: bold;
+        box-shadow: 5px 5px 20px rgb(0, 0, 0);
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        background: rgb(48, 48, 48);
+        font-weight: 600;
+    }
+
+    .unit {
+        border-radius: 16px/2;
+        line-height: 0;
+        width: 16px*3;
+        height: 16px*3;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 16px/2;
+        font-size: 16px*1.2;
+    }
+
+    select {
+        height: 2.0em;
+        line-height: 2;
+        background: rgb(48, 48, 48);
+    }
+
+    .input-group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .pickbanText {
+        display: none;
+    }
+
+    .map {
+        width: 150px;
+        height: 80px;
+        overflow-wrap: break-word;
+        overflow: hidden;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+        color: white;
+        display: inline-block;
+        font-weight: normal;
+        text-shadow: none;
+
+
+
+    }
+
+    .PlayerSelection {
+        width: 500px;
+        height: 200px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+        color: white;
+        display: inline-block;
+        font-weight: normal;
+        text-shadow: none;
+        padding: 10px;
+
+    }
+
+    .Team1 {
+        position: static;
+        left: 10px;
+        display: inline-block;
+        text-align: center;
+
+    }
+
+    .Team2 {
+        position: static;
+        right: 10px;
+        display: inline-block;
+        text-align: center;
+
+    }
+
+    .map.ban {
+        background-color: red;
+    }
+
+    .map.pick {
+        background-color: green;
+
+    }
+
+    .map.default {
+        background-color: none;
+
+    }
+
+    .ConnectionStatus {
+        position: absolute;
+        bottom: 5;
+        left: 1300;
+        background-color: rgba(0, 0, 0, 0.0);
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-style: normal;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 15px;
+        text-shadow: 6px 6px 8px #000000;
+
+    }
+</style>
+
+<body>
+
+    <div class="Team1" id="Player1">
+        <label for="Player1Select">Player 1</label>
+        <select id="Player1Select">
+            <option value="">--Please choose an option--</option>
+        </select>
+    </div>
+    <div class="Team2" id="Player2">
+        <label for="Player2Select">Player 2</label>
+        <select id="Player2Select">
+            <option value="">--Please choose an option--</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="Team1" id="Player3">
+        <label for="Player3Select">Player 3</label>
+        <select id="Player3Select">
+            <option value="">--Please choose an option--</option>
+        </select>
+    </div>
+    <div class="Team2" id="Player4">
+        <label for="Player4Select">Player 4</label>
+        <select id="Player4Select">
+            <option value="">--Please choose an option--</option>
+        </select>
+    </div>
+
+    <br>
+    <br>
+    <label for="chkBoxHard">
+        <input type="checkbox" id="chkBoxHard" onclick="ShowHideDivHard(this)" />
+        Hard override?
+    </label>
+    <div id="dvBoxHard" style="display: none">
+        (Team 1) Player 1 SSID: <input type="text" class="input" id="p1SSID" value=""> (Team 2) Player
+        2
+        SSID: <input type="text" class="input" id="p2SSID" value=""> <br>
+        (Team 1)Player 3 SSID: <input type="text" class="input" id="p3SSID" value=""> (Team 2) Player 4
+        SSID: <input type="text" class="input" id="p4SSID" value=""><br>
+    </div>
+    <label for="chkBox">
+        <input type="checkbox" id="chkBox" onclick="ShowHideDiv(this)" />
+        Name override?
+    </label>
+    <div id="dvBox" style="display: none">
+        (Team 1) Player 1 Name: <input type="text" class="input" id="p1Name" value=""> (Team 2) Player 2 Name: <input
+            type="text" class="input" id="p2Name" value=""> <br>
+        (Team 1)Player 3 Name: <input type="text" class="input" id="p3Name" value=""> (Team 2) Player 4 Name: <input
+            type="text" class="input" id="p4Name" value=""><br>
+    </div>
+    <br>
+
+    <br>
+    Make sure to run Send Data + Get Stats when players change!!
+    <br>
+    <br>
+    <!--  Coordinator Name: <input type="text" id="coordName"><br> -->
+    Caster 1: <input type="text" id="caster1" class="input" value="Caster 1"><br>
+    Caster 2: <input type="text" id="caster2" class="input" value="Caster 2"><br>
+    <br>
+    Team 1: <select id="team1">
+        <!--  <option value="ArsenalAdjacent">Arsenal Adjacent (P)</option>
+        <option value="Tech">Tech Esports (P)</option>
+        <option value="SJSU">SJSU Esports (P/BS)</option>
+        <option value="Leftovers">The Leftovers (P)</option>
+        <option value="IlliniBlack">Illini Black (P)</option>
+        <option value="IlliniBlue">Illini Blue (P)</option>-->
+        <option value="IlliniOrange">Illini Orange (P/BS)</option>
+        <!--  <option value="IlliniWhite">Illini White (P)</option> -->
+        <option value="IlliniD1">Illini D1 (BS)</option>
+        <option value="ucberkeley">Cal Esports (BS/P)</option>
+        <option value="Gauchos">UCSB Gauchos (BS)</option>
+        <option value="UAF">UAF Esports (BS)</option>
+        <option value="CSUF">CSUF Esports (BS)</option>
+        <option value="OCE">Oklahoma Esports (BS)</option>
+        <option value="ChargerBlue">Charger Blue (BS)</option>
+        <option value="UCDavis">UC Davis (BS)</option>
+        <option value="SUNY">SUNY Plattsburgh (BS)</option>
+        <option value="UCEsports">UC Esports (BS)</option>
+        <option value="Stevens">Stevens Esports (BS)</option>
+        <option value="TNTech">TNTech (BS)</option>
+        <option value="Beatcats">Beatcats (BS)</option>
+        <option value="UTDallas">UT Dallas (BS)</option>
+        <option value="GeorgiaTech">Georgia Tech (BS)</option>
+        <option value="OntarioTech">Ontario Tech (BS)</option>
+        <option value="DePaul">DePaul Esports (BS)</option>
+        <option value="Akron">Akron Esports (BS)</option>
+        <option value="Miami">Miami Maelstorm (BS)</option>
+        <option value="SJSU">SJSU Esports (BS)</option>
+        <option value="Crimson">Crimson D1 (BS)</option>
+        <option value="CrimsonA">Crimson A (BS)</option>
+        <option value="CrimsonB">Crimson B (BS)</option>
+        <option value="CalA">Cal Esports A (BS)</option>
+        <option value="CalB">Cal Esports B (BS)</option>
+        <option value="CalC">Cal Esports C (BS)</option>
+        <option value="Nolan">Nolan (BS)</option>
+        <option value="Longhorns">Longhorns (BS)</option>
+        <option value="UWaterloo">UWaterloo (BS)</option>
+        <option value="EmptyTeam">Empty</option>
+    </select> Score: <input type="number" class="input" class="number" id="team1Score" value="0" min="0" max="5"><br>
+    Team 2: <select id="team2">
+        <!--  <option value="ArsenalAdjacent">Arsenal Adjacent (P)</option>
+        
+        <option value="Tech">Tech Esports (P)</option>
+        <option value="SJSU">SJSU Esports (P/BS)</option>
+        <option value="Leftovers">The Leftovers (P)</option>
+        <option value="IlliniBlack">Illini Black (P)</option>
+        <option value="IlliniBlue">Illini Blue (P)</option>-->
+        <option value="IlliniOrange">Illini Orange (P/BS)</option>
+        <!--  <option value="IlliniWhite">Illini White (P)</option> -->
+        <option value="IlliniD1">Illini D1 (BS)</option>
+        <option value="ucberkeley">Cal Esports (BS/P)</option>
+        <option value="Gauchos">UCSB Gauchos (BS)</option>
+        <option value="UAF">UAF Esports (BS)</option>
+        <option value="CSUF">CSUF Esports (BS)</option>
+        <option value="OCE">Oklahoma Esports (BS)</option>
+        <option value="ChargerBlue">Charger Blue (BS)</option>
+        <option value="UCDavis">UC Davis (BS)</option>
+        <option value="SUNY">SUNY Plattsburgh (BS)</option>
+        <option value="UCEsports">UC Esports (BS)</option>
+        <option value="Stevens">Stevens Esports (BS)</option>
+        <option value="TNTech">TNTech (BS)</option>
+        <option value="Beatcats">Beatcats (BS)</option>
+        <option value="UTDallas">UT Dallas (BS)</option>
+        <option value="GeorgiaTech">Georgia Tech (BS)</option>
+        <option value="OntarioTech">Ontario Tech (BS)</option>
+        <option value="DePaul">DePaul Esports (BS)</option>
+        <option value="Akron">Akron Esports (BS)</option>
+        <option value="Miami">Miami Maelstorm (BS)</option>
+        <option value="SJSU">SJSU Esports (BS)</option>
+        <option value="Crimson">Crimson D1 (BS)</option>
+        <option value="CrimsonA">Crimson A (BS)</option>
+        <option value="CrimsonB">Crimson B (BS)</option>
+        <option value="CalA">Cal Esports A (BS)</option>
+        <option value="CalB">Cal Esports B (BS)</option>
+        <option value="CalC">Cal Esports C (BS)</option>
+        <option value="Nolan">Nolan (BS)</option>
+        <option value="Longhorns">Longhorns (BS)</option>
+        <option value="UWaterloo">UWaterloo (BS)</option>
+        <option value="EmptyTeam">Empty</option>
+    </select> Score: <input type="number" class="input" class="number" id="team2Score" value="0" min="0" max="5"><br>
+    <button id="GetPlayers">Get Players</button>
+    Best of: <select id="bestof">
+        <option value="bo3">3</option>
+        <option value="bo5">5</option>
+        <option value="bo7">7</option>
+        <option value="bo9">9</option>
+    </select><br>
+
+    Round Info: <input type="text" class="input long" id="roundInfo" value="Season 8 Div. # Round #"><br><br>
+
+    Map Pool: <select id="mapPoolID" onchange="mapPoolUpdate()">
+        <option value="357">Testing pool 357</option>
+    </select><br>
+
+    <div class="map" id="map0Box">Map 1: <br> <span id="SongName0"> Song Name</span> <br> <select id="map0">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map1Box">Map 2: <br> <span id="SongName1"> Song Name</span> <br> <select id="map1">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map2Box">Map 3: <br> <span id="SongName2"> Song Name</span> <br> <select id="map2">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div><br>
+
+
+
+    <div class="map" id="map3Box">Map 4: <br> <span id="SongName3"> Song Name</span> <br> <select id="map3">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map4Box">Map 5: <br> <span id="SongName4"> Song Name</span> <br> <select id="map4">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map5Box">Map 6: <br> <span id="SongName5"> Song Name</span> <br> <select id="map5">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div><br>
+
+
+    <div class="map" id="map6Box">Map 7: <br> <span id="SongName6"> Song Name</span> <br> <select id="map6">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map7Box">Map 8: <br> <span id="SongName7"> Song Name</span> <br> <select id="map7">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div>
+
+    <div class="map" id="map8Box">Map 9: <br> <span id="SongName8"> Song Name</span> <br> <select id="map8">
+
+            <option value="default">Default</option>
+            <option value="pick">Pick</option>
+            <option value="ban">Ban</option>
+        </select></div><br>
+
+    <br>Stats Page Displayed Maps: <select id="displayedMaps">
+        <option value="3">1-3</option>
+        <option value="6">4-6</option>
+        <option value="9">7-9</option>
+    </select>
+    <br> <br>
+    <button id="SendButton">Send Data</button>
+    <button id="SendStatsButton">Send Data + Get Stats</button>
+    <span id="team1Selection"></span>
+    <span id="team2Selection"></span>
+    <span id="bestofSelection"></span>
+    <span id="mapPoolSelection">357</span>
+    <div class="pickbanText" style="display:none;">
+        <span id="displayedMapsSelection"></span>
+        <span id="map0Selection"></span>
+        <span id="map1Selection"></span>
+        <span id="map2Selection"></span>
+        <span id="map3Selection"></span>
+        <span id="map4Selection"></span>
+        <span id="map5Selection"></span>
+        <span id="map6Selection"></span>
+        <span id="map7Selection"></span>
+        <span id="map8Selection"></span>
+    </div></br>
+
+
+    </div>
+</body>
+
+
+<script>
+    var p1ScoreID;
+    var p2ScoreID;
+    var p3ScoreID;
+    var p4ScoreID;
+    document.getElementById("SendButton").style.display = "none";
+    document.getElementById("SendStatsButton").style.display = "none";
+
+    function ShowHideDiv(chkBox) {
+        var dvBox = document.getElementById("dvBox");
+        dvBox.style.display = chkBox.checked ? "block" : "none";
+    }
+
+    function ShowHideDivHard(chkBoxHard) {
+        var dvBoxHard = document.getElementById("dvBoxHard");
+        dvBoxHard.style.display = chkBoxHard.checked ? "block" : "none";
+    }
+
+
+    function teamListUpdate() {
+        var e1 = document.getElementById("team1");
+        var team1Selection = e1.options[e1.selectedIndex].value;
+
+        document.getElementById("team1Selection").innerHTML = team1Selection;
+
+        var e2 = document.getElementById("team2");
+        var team2Selection = e2.options[e2.selectedIndex].value;
+
+        document.getElementById("team2Selection").innerHTML = team2Selection;
+    }
+
+    function sendablePlayerName() {
+        var e1 = document.getElementById("Player1Select");
+        P1 = e1.options[e1.selectedIndex].value;
+
+        var e2 = document.getElementById("Player2Select");
+        P2 = e2.options[e2.selectedIndex].value;
+
+        var e3 = document.getElementById("Player3Select");
+        P3 = e3.options[e3.selectedIndex].value;
+
+        var e4 = document.getElementById("Player4Select");
+        P4 = e4.options[e4.selectedIndex].value;
+
+
+    }
+
+    function mapUpdate() {
+
+        var e11 = document.getElementById("displayedMaps");
+        var displayedMapsSelection = e11.options[e11.selectedIndex].value;
+        console.log(displayedMapsSelection);
+        document.getElementById("displayedMapsSelection").innerHTML = displayedMapsSelection;
+
+        var e10 = document.getElementById("mapPoolID");
+        var mapPoolSelection = e10.options[e10.selectedIndex].value;
+        console.log(mapPoolSelection);
+        document.getElementById("mapPoolSelection").innerHTML = mapPoolSelection;
+
+
+        document.getElementById('map0Box').className = 'map';
+        document.getElementById('map1Box').className = 'map';
+        document.getElementById('map2Box').className = 'map';
+        document.getElementById('map3Box').className = 'map';
+        document.getElementById('map4Box').className = 'map';
+        document.getElementById('map5Box').className = 'map';
+        document.getElementById('map6Box').className = 'map';
+        document.getElementById('map7Box').className = 'map';
+        document.getElementById('map8Box').className = 'map';
+
+        var e0 = document.getElementById("map0");
+        var map0Selection = e0.options[e0.selectedIndex].value;
+
+        document.getElementById("map0Selection").innerHTML = map0Selection;
+        document.getElementById('map0Box').className += ' ' + map0Selection;
+
+        var e1 = document.getElementById("map1");
+        var map1Selection = e1.options[e1.selectedIndex].value;
+
+        document.getElementById("map1Selection").innerHTML = map1Selection;
+        document.getElementById('map1Box').className += ' ' + map1Selection;
+
+        var e2 = document.getElementById("map2");
+        var map2Selection = e2.options[e2.selectedIndex].value;
+
+        document.getElementById("map2Selection").innerHTML = map2Selection;
+        document.getElementById('map2Box').className += ' ' + map2Selection;
+
+        var e3 = document.getElementById("map3");
+        var map3Selection = e3.options[e3.selectedIndex].value;
+
+        document.getElementById("map3Selection").innerHTML = map3Selection;
+        document.getElementById('map3Box').className += ' ' + map3Selection;
+
+        var e4 = document.getElementById("map4");
+        var map4Selection = e4.options[e4.selectedIndex].value;
+
+        document.getElementById("map4Selection").innerHTML = map4Selection;
+        document.getElementById('map4Box').className += ' ' + map4Selection;
+
+        var e5 = document.getElementById("map5");
+        var map5Selection = e5.options[e5.selectedIndex].value;
+
+        document.getElementById("map5Selection").innerHTML = map5Selection;
+        document.getElementById('map5Box').className += ' ' + map5Selection;
+
+        var e6 = document.getElementById("map6");
+        var map6Selection = e6.options[e6.selectedIndex].value;
+
+        document.getElementById("map6Selection").innerHTML = map6Selection;
+        document.getElementById('map6Box').className += ' ' + map6Selection;
+
+        var e7 = document.getElementById("map7");
+        var map7Selection = e7.options[e7.selectedIndex].value;
+
+        document.getElementById("map7Selection").innerHTML = map7Selection;
+        document.getElementById('map7Box').className += ' ' + map7Selection;
+
+        var e8 = document.getElementById("map8");
+        var map8Selection = e8.options[e8.selectedIndex].value;
+
+        document.getElementById("map8Selection").innerHTML = map8Selection;
+        document.getElementById('map8Box').className += ' ' + map8Selection;
+    }
+
+
+    function bestofUpdate() {
+        var b = document.getElementById("bestof");
+        var bestofSelection = b.options[b.selectedIndex].value;
+
+        document.getElementById("bestofSelection").innerHTML = bestofSelection;
+
+    }
+
+    function connect() {
+
+        sock = new WebSocket("ws://localhost:1337");
+        console.log("Attempting to connect to control panel");
+        sock.onopen = function () {
+            console.log("Connected to BSTournamentHelper");
+        };
+
+        sock.onclose = function (e) {
+            console.log("Socket is closed. Reconnect attempt in 1 second");
+            setTimeout(function () {
+                connect();
+            }, 1000);
+        }
+
+        sock.onerror = function (err) {
+            console.log(err);
+            sock.close();
+        }
+
+        var button = document.getElementById("SendButton");
+        button.onclick = function (e) {
+            teamListUpdate();
+            bestofUpdate();
+            mapUpdate();
+            mapPoolUpdate();
+
+            sendablePlayerName();
+
+
+
+
+
+
+
+
+            var caster1Name = document.getElementById("caster1");
+            var caster2Name = document.getElementById("caster2");
+            var team1Score = document.getElementById("team1Score");
+            var team2Score = document.getElementById("team2Score");
+            var roundInfoText = document.getElementById("roundInfo");
+
+            if (chkBoxHard.checked == true) {
+                p1ScoreID = document.getElementById("p1SSID");
+                p2ScoreID = document.getElementById("p2SSID");
+                p3ScoreID = document.getElementById("p3SSID");
+                p4ScoreID = document.getElementById("p4SSID");
+
+                var messageData = {
+                "Event": "MatchData",
+                "Data": {
+                    "P1": p1ScoreID.value,
+                    "P2": p2ScoreID.value,
+                    "P3": p3ScoreID.value,
+                    "P4": p4ScoreID.value,
+                    "Team1": team1Selection.innerHTML,
+                    "Team2": team2Selection.innerHTML,
+                    "Caster1": caster1Name.value,
+                    "Caster2": caster2Name.value,
+                    "BestOf": bestofSelection.innerHTML,
+                    "Team1Score": team1Score.value,
+                    "Team2Score": team2Score.value,
+                    "RoundInfo": roundInfoText.value,
+                    "MapPool": mapPoolSelection.innerHTML,
+                    "Map0": map0Selection.innerHTML,
+                    "Map1": map1Selection.innerHTML,
+                    "Map2": map2Selection.innerHTML,
+                    "Map3": map3Selection.innerHTML,
+                    "Map4": map4Selection.innerHTML,
+                    "Map5": map5Selection.innerHTML,
+                    "Map6": map6Selection.innerHTML,
+                    "Map7": map7Selection.innerHTML,
+                    "Map8": map8Selection.innerHTML,
+                    "DisplayedMaps": displayedMapsSelection.innerHTML,
+                    "StatsUpdate": 0,
+                    "NameOverride": chkBox.checked,
+                    "P1Name": p1Name.value,
+                    "P2Name": p2Name.value,
+                    "P3Name": p3Name.value,
+                    "P4Name": p4Name.value,
+                }
+            }
+
+            } else {
+    
+            var messageData = {
+                "Event": "ControllerData",
+                "Data": {
+                    "P1": P1,
+                    "P2": P2,
+                    "P3": P3,
+                    "P4": P4,
+                    "Team1": team1Selection.innerHTML,
+                    "Team2": team2Selection.innerHTML,
+                    "Caster1": caster1Name.value,
+                    "Caster2": caster2Name.value,
+                    "BestOf": bestofSelection.innerHTML,
+                    "Team1Score": team1Score.value,
+                    "Team2Score": team2Score.value,
+                    "RoundInfo": roundInfoText.value,
+                    "MapPool": mapPoolSelection.innerHTML,
+                    "Map0": map0Selection.innerHTML,
+                    "Map1": map1Selection.innerHTML,
+                    "Map2": map2Selection.innerHTML,
+                    "Map3": map3Selection.innerHTML,
+                    "Map4": map4Selection.innerHTML,
+                    "Map5": map5Selection.innerHTML,
+                    "Map6": map6Selection.innerHTML,
+                    "Map7": map7Selection.innerHTML,
+                    "Map8": map8Selection.innerHTML,
+                    "DisplayedMaps": displayedMapsSelection.innerHTML,
+                    "StatsUpdate": 0,
+                    "NameOverride": chkBox.checked,
+                    "P1Name": p1Name.value,
+                    "P2Name": p2Name.value,
+                    "P3Name": p3Name.value,
+                    "P4Name": p4Name.value,
+                }
+
+            }
+
+
+
+            }
+
+
+
+            var messageString = JSON.stringify(messageData);
+
+            console.log(messageString);
+
+            sock.send(messageString);
+        }
+
+
+
+        var button = document.getElementById("SendStatsButton");
+        button.onclick = function (e) {
+            teamListUpdate();
+            bestofUpdate();
+            mapUpdate();
+            mapPoolUpdate();
+
+            sendablePlayerName();
+
+            var p1ScoreID = document.getElementById("p1SSID");
+            var p2ScoreID = document.getElementById("p2SSID");
+            var p3ScoreID = document.getElementById("p3SSID");
+            var p4ScoreID = document.getElementById("p4SSID");
+            var caster1Name = document.getElementById("caster1");
+            var caster2Name = document.getElementById("caster2");
+            var team1Score = document.getElementById("team1Score");
+            var team2Score = document.getElementById("team2Score");
+            var roundInfoText = document.getElementById("roundInfo");
+
+
+            
+            if (chkBoxHard.checked == true) {
+                p1ScoreID = document.getElementById("p1SSID");
+                p2ScoreID = document.getElementById("p2SSID");
+                p3ScoreID = document.getElementById("p3SSID");
+                p4ScoreID = document.getElementById("p4SSID");
+
+                var messageData = {
+                "Event": "MatchData",
+                "Data": {
+                    "P1": p1ScoreID.value,
+                    "P2": p2ScoreID.value,
+                    "P3": p3ScoreID.value,
+                    "P4": p4ScoreID.value,
+                    "Team1": team1Selection.innerHTML,
+                    "Team2": team2Selection.innerHTML,
+                    "Caster1": caster1Name.value,
+                    "Caster2": caster2Name.value,
+                    "BestOf": bestofSelection.innerHTML,
+                    "Team1Score": team1Score.value,
+                    "Team2Score": team2Score.value,
+                    "RoundInfo": roundInfoText.value,
+                    "MapPool": mapPoolSelection.innerHTML,
+                    "Map0": map0Selection.innerHTML,
+                    "Map1": map1Selection.innerHTML,
+                    "Map2": map2Selection.innerHTML,
+                    "Map3": map3Selection.innerHTML,
+                    "Map4": map4Selection.innerHTML,
+                    "Map5": map5Selection.innerHTML,
+                    "Map6": map6Selection.innerHTML,
+                    "Map7": map7Selection.innerHTML,
+                    "Map8": map8Selection.innerHTML,
+                    "DisplayedMaps": displayedMapsSelection.innerHTML,
+                    "StatsUpdate": 1,
+                    "NameOverride": chkBox.checked,
+                    "P1Name": p1Name.value,
+                    "P2Name": p2Name.value,
+                    "P3Name": p3Name.value,
+                    "P4Name": p4Name.value,
+                }
+            }
+
+            } else {
+    
+            var messageData = {
+                "Event": "ControllerData",
+                "Data": {
+                    "P1": P1,
+                    "P2": P2,
+                    "P3": P3,
+                    "P4": P4,
+                    "Team1": team1Selection.innerHTML,
+                    "Team2": team2Selection.innerHTML,
+                    "Caster1": caster1Name.value,
+                    "Caster2": caster2Name.value,
+                    "BestOf": bestofSelection.innerHTML,
+                    "Team1Score": team1Score.value,
+                    "Team2Score": team2Score.value,
+                    "RoundInfo": roundInfoText.value,
+                    "MapPool": mapPoolSelection.innerHTML,
+                    "Map0": map0Selection.innerHTML,
+                    "Map1": map1Selection.innerHTML,
+                    "Map2": map2Selection.innerHTML,
+                    "Map3": map3Selection.innerHTML,
+                    "Map4": map4Selection.innerHTML,
+                    "Map5": map5Selection.innerHTML,
+                    "Map6": map6Selection.innerHTML,
+                    "Map7": map7Selection.innerHTML,
+                    "Map8": map8Selection.innerHTML,
+                    "DisplayedMaps": displayedMapsSelection.innerHTML,
+                    "StatsUpdate": 1,
+                    "NameOverride": chkBox.checked,
+                    "P1Name": p1Name.value,
+                    "P2Name": p2Name.value,
+                    "P3Name": p3Name.value,
+                    "P4Name": p4Name.value,
+                }
+
+            }
+
+        
+
+            }
+
+
+
+            var messageString = JSON.stringify(messageData);
+
+            console.log(messageString);
+
+            sock.send(messageString);
+        }
+    }
+    var button = document.getElementById("GetPlayers");
+    button.onclick = function (e) {
+        teamListUpdate();
+        document.getElementById("SendButton").style.display = "";
+        document.getElementById("SendStatsButton").style.display = "";
+        var messageData = {
+            "Event": "ControllerTeamData",
+            "Data": {
+                "Team1": team1Selection.innerHTML,
+                "Team2": team2Selection.innerHTML,
+            }
+
+
+
+
+
+
+        }
+
+
+
+        var messageString = JSON.stringify(messageData);
+
+        console.log(messageString);
+
+        sock.send(messageString);
+    }
+
+
+
+
+    connect();
+    mapPoolUpdate();
+    var mapCount;
+
+    function mapPoolUpdate() {
+        fetch(`https://beatkhana.com/api/tournament/2147484261/map-pools`)
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+
+                console.log(data);
+                // Do stuff here
+                levelNames = [];
+                SongName = [];
+
+                var mapCount = 0;
+                console.log(mapPoolSelection.innerHTML);
+                for (var i = 0; i < data[mapPoolSelection.innerHTML].songs.length; i++) {
+
+                    levelNames.push(data[mapPoolSelection.innerHTML].songs[i].name);
+                    mapCount = data[mapPoolSelection.innerHTML].songs.length;
+                    console.log(mapCount);
+                }
+                namePush();
+
+
+                //Not pushing names
+
+
+
+
+
+                function namePush() {
+                    if (mapCount >= 1) {
+                        SongName.push(levelNames[0]);
+                        SongName0 = SongName.at(0);
+                        document.getElementById('SongName0').innerHTML = SongName0;
+                    }
+
+                    if (mapCount >= 2) {
+                        SongName.push(levelNames[1]);
+                        SongName1 = SongName.at(1);
+                        document.getElementById('SongName1').innerHTML = SongName1;
+                    }
+
+                    if (mapCount >= 3) {
+                        SongName.push(levelNames[2]);
+                        SongName2 = SongName.at(2);
+                        document.getElementById('SongName2').innerHTML = SongName2;
+                    }
+
+                    if (mapCount >= 4) {
+                        SongName.push(levelNames[3]);
+                        SongName3 = SongName.at(3);
+                        document.getElementById('SongName3').innerHTML = SongName3;
+                    }
+
+                    if (mapCount >= 5) {
+                        SongName.push(levelNames[4]);
+                        SongName4 = SongName.at(4);
+                        document.getElementById('SongName4').innerHTML = SongName4;
+                    }
+
+                    if (mapCount >= 6) {
+                        SongName.push(levelNames[5]);
+                        SongName5 = SongName.at(5);
+                        document.getElementById('SongName5').innerHTML = SongName5;
+                    }
+
+                    if (mapCount >= 7) {
+                        SongName.push(levelNames[6]);
+                        SongName6 = SongName.at(6);
+                        document.getElementById('SongName6').innerHTML = SongName6;
+                    }
+
+                    if (mapCount >= 8) {
+                        SongName.push(levelNames[7]);
+                        SongName7 = SongName.at(7);
+                        document.getElementById('SongName7').innerHTML = SongName7;
+                    }
+
+                    if (mapCount >= 9) {
+                        SongName.push(levelNames[8]);
+                        SongName8 = SongName.at(8);
+                        document.getElementById('SongName8').innerHTML = SongName8;
+                    }
+                }
+
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+    sock.onmessage = function (msg) {
+        let data = JSON.parse(msg.data);
+        console.log(data);
+        if (data.Event == "TeamPlayers") {
+
+            clearList1();
+            clearList2();
+            clearList3();
+            clearList4();
+
+
+            Object.entries(data.Data.Team1).forEach(([key, value]) => {
+                console.log(key, value);
+
+                option = document.createElement("option");
+                option.textContent = value;
+                option.value = option.textContent;
+                Player1Select.add(option);
+
+            });
+            Object.entries(data.Data.Team1).forEach(([key, value]) => {
+                console.log(key, value);
+
+                option = document.createElement("option");
+                option.textContent = value;
+                option.value = option.textContent;
+                Player3Select.add(option);
+
+            });
+            Object.entries(data.Data.Team2).forEach(([key, value]) => {
+                console.log(key, value);
+
+                option = document.createElement("option");
+                option.textContent = value;
+                option.value = option.textContent;
+                Player2Select.add(option);
+
+            });
+            Object.entries(data.Data.Team2).forEach(([key, value]) => {
+                console.log(key, value);
+
+                option = document.createElement("option");
+                option.textContent = value;
+                option.value = option.textContent;
+                Player4Select.add(option);
+
+            });
+        }
+    }
+
+
+
+    function clearList1() {
+        var select = document.getElementById("Player1Select");
+        var length = select.options.length;
+        for (i = length - 1; i >= 1; i--) {
+            select.options[i] = null;
+        }
+    }
+
+    function clearList2() {
+        var select = document.getElementById("Player2Select");
+        var length = select.options.length;
+        for (i = length - 1; i >= 1; i--) {
+            select.options[i] = null;
+        }
+    }
+
+    function clearList3() {
+        var select = document.getElementById("Player3Select");
+        var length = select.options.length;
+        for (i = length - 1; i >= 1; i--) {
+            select.options[i] = null;
+        }
+    }
+
+    function clearList4() {
+        var select = document.getElementById("Player4Select");
+        var length = select.options.length;
+        for (i = length - 1; i >= 1; i--) {
+            select.options[i] = null;
+        }
+    }
+</script>
+
+</html>
