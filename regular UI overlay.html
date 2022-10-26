@@ -1,0 +1,667 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
+
+        .leftTeam.Picture {
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 30px;
+            top: 15px;
+
+            background: url(leftteam.png);
+            border-radius: 15px;
+        }
+
+        .leftTeam.Name {
+            position: absolute;
+            width: 308px;
+            height: 130px;
+            left: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: bold;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+        }
+
+        .rightTeam.Picture {
+
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            left: 1760px;
+            top: 15px;
+
+            background: url(Longhorn.png);
+            border-radius: 15px;
+        }
+
+        .rightTeam.Name {
+            position: absolute;
+            width: 330px;
+            height: 130px;
+            right: 170px;
+            top: -5px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 60px;
+            text-align: right;
+            overflow-wrap: break-word;
+            overflow: hidden;
+
+            color: #FFFFFF;
+
+
+        }
+
+        .roundInfo {
+            position: absolute;
+            width: 89px;
+            height: 30px;
+            left: 915px;
+            top: -15px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+
+            color: #FFFFFF;
+
+        }
+
+        .cvreLogo {
+            position: absolute;
+            width: 191px;
+            height: 86px;
+            left: 864px;
+            top: 42px;
+
+            background: url(cvrelogo.png);
+        }
+
+
+
+
+
+        .Team1Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 787px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box2 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 710px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Team1Box3 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 633px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team1Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 556px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box1 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1078px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Team2Box2 {
+
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1155px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Team2Box3 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1232px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+
+        }
+
+        .Team2Box4 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 1309px;
+            top: 54px;
+
+            background: #343434;
+            border-radius: 12px;
+        }
+
+        .Point {
+            animation: PointAdd 1s;
+            background-color: #FFFFFF;
+        }
+
+        @keyframes PointAdd {
+            from {
+                background-color: #343434;
+            }
+
+            to {
+                background-color: #FFFFFF;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p id="roundInfo" class="roundInfo">Finals</p>
+    <img id="cvreLogo" src="images/cvrelogo.png" class="cvreLogo">
+    <div class="leftTeam" id="Team1">
+        <img id="leftTeamImage" src="images/fallen.png" class="leftTeam Picture">
+        <h1 id="leftTeamName" class="leftTeam Name">Extra long team name lol</p>
+    </div>
+
+    <div class="rightTeam" id="Team2">
+        <img id="rightTeamImage" src="images/fallen.png" class="rightTeam Picture">
+        <h1 id="rightTeamName" class="rightTeam Name">Right Team</p>
+    </div>
+
+
+    <div class="Team1Box1" id="Team1Box1"></div>
+    <div class="Team1Box2" id="Team1Box2"></div>
+    <div class="Team1Box3" id="Team1Box3"></div>
+    <div class="Team1Box4" id="Team1Box4"></div>
+
+    <div class="Team2Box1" id="Team2Box1"></div>
+    <div class="Team2Box2" id="Team2Box2"></div>
+    <div class="Team2Box3" id="Team2Box3"></div>
+    <div class="Team2Box4" id="Team2Box4"></div>
+
+</body>
+
+
+<script>
+    function connect() {
+
+        sock = new WebSocket("ws://localhost:1337");
+        sock.onopen = function () {
+            console.log("Connected to BSTournamentHelper");
+        };
+
+        sock.onclose = function (e) {
+            console.log("Socket is closed. Reconnect attempt in 1 second");
+            setTimeout(function () {
+                connect();
+            }, 1000);
+        }
+
+        sock.onerror = function (err) {
+            console.log(err);
+            sock.close();
+        }
+        sock.onmessage = function (msg) {
+            let data = JSON.parse(msg.data);
+            console.log(data);
+
+            if (data.Event == "MatchData") {
+                team1Selection = data.Data.Team1;
+                team2Selection = data.Data.Team2;
+                team1Score = "1"; //data.Data.Team1Score;
+                team2Score = data.Data.Team2Score;
+                bestof = data.Data.BestOf;
+                roundInfo = data.Data.RoundInfo;
+                roundInfoText.innerText = roundInfo;
+                console.log(bestof + team1Score + team2Score);
+                var team1Info = {
+                    "ArsenalAdjacent": {
+                        "name": "Arsenal Adjacent",
+                        "logo": "images/ArsenalAdjacent.png"
+                    },
+                    "ucberkeley": {
+                        "name": "Cal Esports",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "Tech": {
+                        "name": "Tech Esports",
+                        "logo": "images/Tech.png"
+                    },
+                    "SJSU": {
+                        "name": "SJSU Esports",
+                        "logo": "images/SJSU.png"
+                    },
+                    "Leftovers": {
+                        "name": "The Leftovers",
+                        "logo": "images/Leftovers.png"
+                    },
+                    "IlliniBlack": {
+                        "name": "Illini Esports Black",
+                        "logo": "images/IlliniBlack.png"
+                    },
+                    "IlliniBlue": {
+                        "name": "Illini Esports Blue",
+                        "logo": "images/IlliniBlue.png"
+                    },
+                    "IlliniOrange": {
+                        "name": "Illini Esports Orange",
+                        "logo": "images/IlliniOrange.png"
+                    },
+                    "IlliniWhite": {
+                        "name": "Illini Esports White",
+                        "logo": "images/IlliniWhite.png"
+                    },
+                    "IlliniD1": {
+                        "name": "Illini Esports D1",
+                        "logo": "images/IlliniD1.png"
+                    },
+                    "Gauchos": {
+                        "name": "Gauchos",
+                        "logo": "images/Gauchos.png"
+                    },
+                    "UAF": {
+                        "name": "UAF Esports",
+                        "logo": "images/UAF.png"
+                    },
+                    "CSUF": {
+                        "name": "CSUF Esports",
+                        "logo": "images/CSUF.png"
+                    },
+                    "OCE": {
+                        "name": "Oklahoma Christian",
+                        "logo": "images/OCE.png"
+                    },
+                    "ChargerBlue": {
+                        "name": "Charger Blue",
+                        "logo": "images/ChargerBlue.png"
+                    },
+                    "UCDavis": {
+                        "name": "UC Davis",
+                        "logo": "images/UCDavis.png"
+                    },
+                    "SUNY": {
+                        "name": "SUNY Plattsburgh",
+                        "logo": "images/SUNY.png"
+                    },
+                    "UCEsports": {
+                        "name": "UC Esports",
+                        "logo": "images/UCEsports.png"
+                    },
+                    "Stevens": {
+                        "name": "Stevens Esports",
+                        "logo": "images/Stevens.png"
+                    },
+                    "TNTech": {
+                        "name": "TNTech",
+                        "logo": "images/TNTech.png"
+                    },
+                    "Beatcats": {
+                        "name": "The Beatcats",
+                        "logo": "images/Beatcats.png"
+                    },
+                    "Longhorns": {
+                        "name": "Longhorn Gaming",
+                        "logo": "images/Longhorn.png"
+                    },
+                    "GeorgiaTech": {
+                        "name": "Georgia Tech",
+                        "logo": "images/GeorgiaTech.png"
+                    },
+                    "OntarioTech": {
+                        "name": "Ontario Tech",
+                        "logo": "images/OntarioTech.png"
+                    },
+                    "DePaul": {
+                        "name": "DePaul Esports",
+                        "logo": "images/DePaul.png"
+                    },
+                    "Akron": {
+                        "name": "Akron Esports",
+                        "logo": "images/Akron.png"
+                    },
+                    "Miami": {
+                        "name": "Miami Maelstrom",
+                        "logo": "images/Miami.png"
+                    },
+                    "SJSU": {
+                        "name": "SJSU Esports",
+                        "logo": "images/SJSU.png"
+                    },
+                    "CrimsonA": {
+                        "name": "Crimson Gaming A",
+                        "logo": "images/Crimson.png"
+                    },
+                    "CrimsonB": {
+                        "name": "Crimson Gaming B",
+                        "logo": "images/Crimson.png"
+                    },
+                    "CalA": {
+                        "name": "Cal Esports A",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "CalB": {
+                        "name": "Cal Esports B",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "CalC": {
+                        "name": "Cal Esports C",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "Nolan": {
+                        "name": "Nolaniversity",
+                        "logo": "images/Nolan.png"
+                    },
+                    "UTDallas": {
+                        "name": "UT Dallas",
+                        "logo": "images/UTDallas.png"
+                    },
+                    "UWaterloo": {
+                        "name": "UWaterloo Esports",
+                        "logo": "images/UWaterloo.png"
+                    },
+                    "EmptyTeam": {
+                        "name": " ",
+                        "logo": "images/EmptyTeam.png"
+                    },
+                }
+                var team2Info = {
+                    "ArsenalAdjacent": {
+                        "name": "Arsenal Adjacent",
+                        "logo": "images/ArsenalAdjacent.png"
+                    },
+                    "ucberkeley": {
+                        "name": "Cal Esports",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "Tech": {
+                        "name": "Tech Esports",
+                        "logo": "images/Tech.png"
+                    },
+                    "SJSU": {
+                        "name": "SJSU Esports",
+                        "logo": "images/SJSU.png"
+                    },
+                    "Leftovers": {
+                        "name": "The Leftovers",
+                        "logo": "images/Leftovers.png"
+                    },
+                    "IlliniBlack": {
+                        "name": "Illini Esports Black",
+                        "logo": "images/IlliniBlack.png"
+                    },
+                    "IlliniBlue": {
+                        "name": "Illini Esports Blue",
+                        "logo": "images/IlliniBlue.png"
+                    },
+                    "IlliniOrange": {
+                        "name": "Illini Esports Orange",
+                        "logo": "images/IlliniOrange.png"
+                    },
+                    "IlliniWhite": {
+                        "name": "Illini Esports White",
+                        "logo": "images/IlliniWhite.png"
+                    },
+                    "IlliniD1": {
+                        "name": "Illini Esports D1",
+                        "logo": "images/IlliniD1.png"
+                    },
+                    "Gauchos": {
+                        "name": "Gauchos",
+                        "logo": "images/Gauchos.png"
+                    },
+                    "UAF": {
+                        "name": "UAF Esports",
+                        "logo": "images/UAF.png"
+                    },
+                    "CSUF": {
+                        "name": "CSUF Esports",
+                        "logo": "images/CSUF.png"
+                    },
+                    "OCE": {
+                        "name": "Oklahoma Christian",
+                        "logo": "images/OCE.png"
+                    },
+                    "ChargerBlue": {
+                        "name": "Charger Blue",
+                        "logo": "images/ChargerBlue.png"
+                    },
+                    "UCDavis": {
+                        "name": "UC Davis",
+                        "logo": "images/UCDavis.png"
+                    },
+                    "SUNY": {
+                        "name": "SUNY Plattsburgh",
+                        "logo": "images/SUNY.png"
+                    },
+                    "UCEsports": {
+                        "name": "UC Esports",
+                        "logo": "images/UCEsports.png"
+                    },
+                    "Stevens": {
+                        "name": "Stevens Esports",
+                        "logo": "images/Stevens.png"
+                    },
+                    "TNTech": {
+                        "name": "TNTech",
+                        "logo": "images/TNTech.png"
+                    },
+                    "Beatcats": {
+                        "name": "The Beatcats",
+                        "logo": "images/Beatcats.png"
+                    },
+                    "Longhorns": {
+                        "name": "Longhorn Gaming",
+                        "logo": "images/Longhorn.png"
+                    },
+                    "GeorgiaTech": {
+                        "name": "Georgia Tech",
+                        "logo": "images/GeorgiaTech.png"
+                    },
+                    "OntarioTech": {
+                        "name": "Ontario Tech",
+                        "logo": "images/OntarioTech.png"
+                    },
+                    "DePaul": {
+                        "name": "DePaul Esports",
+                        "logo": "images/DePaul.png"
+                    },
+                    "Akron": {
+                        "name": "Akron Esports",
+                        "logo": "images/Akron.png"
+                    },
+                    "Miami": {
+                        "name": "Miami Maelstrom",
+                        "logo": "images/Miami.png"
+                    },
+                    "SJSU": {
+                        "name": "SJSU Esports",
+                        "logo": "images/SJSU.png"
+                    },
+                    "Crimson": {
+                        "name": "Crimson Gaming D1",
+                        "logo": "images/Crimson.png"
+                    },
+                    "CrimsonA": {
+                        "name": "Crimson Gaming A",
+                        "logo": "images/Crimson.png"
+                    },
+                    "CrimsonB": {
+                        "name": "Crimson Gaming B",
+                        "logo": "images/Crimson.png"
+                    },
+                    "CalA": {
+                        "name": "Cal Esports A",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "CalB": {
+                        "name": "Cal Esports B",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "CalC": {
+                        "name": "Cal Esports C",
+                        "logo": "images/UCBerkeley.png"
+                    },
+                    "Nolan": {
+                        "name": "Nolaniversity",
+                        "logo": "images/Nolan.png"
+                    },
+                    "UTDallas": {
+                        "name": "UT Dallas",
+                        "logo": "images/UTDallas.png"
+                    },
+                    "UWaterloo": {
+                        "name": "UWaterloo Esports",
+                        "logo": "images/UWaterloo.png"
+                    },
+                    "EmptyTeam": {
+                        "name": " ",
+                        "logo": "images/EmptyTeam.png"
+                    },
+                }
+
+                team1Name.innerText = team1Info[team1Selection].name;
+                document.getElementById('team1Image').src = team1Info[team1Selection].logo;
+
+                team2Name.innerText = team2Info[team2Selection].name;
+                document.getElementById('team2Image').src = team1Info[team2Selection].logo;
+
+
+                //Scoring
+
+                if (bestof == "bo3") {
+
+                    document.getElementById('Team1Box4').style = "display: none;"
+                    document.getElementById('Team2Box4').style = "display: none;"
+
+
+                }
+                if (bestof == "bo5") {
+
+                    document.getElementById('Team1Box4').style.display = "";
+                    document.getElementById('Team2Box4').style.display = "";
+
+
+                }
+                if (team1Score == "1") {
+                    document.getElementById('Team1Box1').classList.add("Point");
+                    document.getElementById('Team1Box2').classList.remove("Point");
+                    document.getElementById('Team1Box3').classList.remove("Point");
+                    document.getElementById('Team1Box4').classList.remove("Point");
+                }
+                if (team1Score == "2") {
+                    document.getElementById('Team1Box1').classList.add("Point");
+                    document.getElementById('Team1Box2').classList.add("Point");
+                    document.getElementById('Team1Box3').classList.remove("Point");
+                    document.getElementById('Team1Box4').classList.remove("Point");
+                }
+                if (team1Score == "3") {
+                    document.getElementById('Team1Box1').classList.add("Point");
+                    document.getElementById('Team1Box2').classList.add("Point");
+                    document.getElementById('Team1Box3').classList.add("Point");
+                    document.getElementById('Team1Box4').classList.remove("Point");
+                }
+                if (team1Score == "4") {
+                    document.getElementById('Team1Box1').classList.add("Point");
+                    document.getElementById('Team1Box2').classList.add("Point");
+                    document.getElementById('Team1Box3').classList.add("Point");
+                    document.getElementById('Team1Box4').classList.add("Point");
+                }
+
+
+                if (team2Score == "1") {
+                    document.getElementById('Team2Box1').classList.add("Point");
+                    document.getElementById('Team2Box2').classList.remove("Point");
+                    document.getElementById('Team2Box3').classList.remove("Point");
+                    document.getElementById('Team2Box4').classList.remove("Point");
+                }
+                if (team2Score == "2") {
+                    document.getElementById('Team2Box1').classList.add("Point");
+                    document.getElementById('Team2Box2').classList.add("Point");
+                    document.getElementById('Team2Box3').classList.remove("Point");
+                    document.getElementById('Team2Box4').classList.remove("Point");
+                }
+                if (team2Score == "3") {
+                    document.getElementById('Team2Box1').classList.add("Point");
+                    document.getElementById('Team2Box2').classList.add("Point");
+                    document.getElementById('Team2Box3').classList.add("Point");
+                    document.getElementById('Team2Box4').classList.remove("Point");
+                }
+                if (team2Score == "4") {
+                    document.getElementById('Team2Box1').classList.add("Point");
+                    document.getElementById('Team2Box2').classList.add("Point");
+                    document.getElementById('Team2Box3').classList.add("Point");
+                    document.getElementById('Team2Box4').classList.add("Point");
+                }
+
+
+
+
+
+            }
+        }
+
+
+    }
+
+
+
+    connect();
+</script>
+
+
+</html>

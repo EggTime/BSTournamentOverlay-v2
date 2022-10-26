@@ -4,189 +4,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap');
 
-
-        .leftTeam.Picture {
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            left: 30px;
-            top: 15px;
-
-            background: url(leftteam.png);
-            border-radius: 15px;
-        }
-
-        .leftTeam.Name {
-            position: absolute;
-            width: 308px;
-            height: 130px;
-            left: 170px;
-            top: -5px;
-
-            font-family: 'Poppins';
-            font-style: bold;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 60px;
-            overflow-wrap: break-word;
-            overflow: hidden;
-
-            color: #FFFFFF;
-        }
-
-        .rightTeam.Picture {
-
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            left: 1760px;
-            top: 15px;
-
-            background: url(Longhorn.png);
-            border-radius: 15px;
-        }
-
-        .rightTeam.Name {
-            position: absolute;
-            width: 330px;
-            height: 130px;
-            right: 170px;
-            top: -5px;
-
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 60px;
-            text-align: right;
-            overflow-wrap: break-word;
-            overflow: hidden;
-
-            color: #FFFFFF;
-
-
-        }
-
-        .roundInfo {
-            position: absolute;
-            width: 89px;
-            height: 30px;
-            left: 915px;
-            top: -15px;
-
-            font-family: 'Poppins';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 36px;
-            text-align: center;
-
-            color: #FFFFFF;
-
-        }
-
-        .cvreLogo {
-            position: absolute;
-            width: 191px;
-            height: 86px;
-            left: 864px;
-            top: 42px;
-
-            background: url(cvrelogo.png);
-        }
-
-        .Team1Box1 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 787px;
-            top: 54px;
-
-            background: #FFFFFF;
-            border-radius: 12px;
-
-        }
-
-        .Team1Box2 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 710px;
-            top: 54px;
-
-            background: #343434;
-            border-radius: 12px;
-        }
-
-        .Team1Box3 {
-
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 633px;
-            top: 54px;
-
-            background: #343434;
-            border-radius: 12px;
-
-        }
-
-        .Team1Box4 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 556px;
-            top: 54px;
-
-            background: #343434;
-            border-radius: 12px;
-
-        }
-
-        .Team2Box1 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 1078px;
-            top: 54px;
-
-            background: #FFFFFF;
-            border-radius: 12px;
-        }
-
-        .Team2Box2 {
-
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 1155px;
-            top: 54px;
-
-            background: #FFFFFF;
-            border-radius: 12px;
-        }
-
-        .Team2Box3 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 1232px;
-            top: 54px;
-
-            background: #343434;
-            border-radius: 12px;
-
-        }
-
-        .Team2Box4 {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            left: 1309px;
-            top: 54px;
-
-            background: #343434;
-            border-radius: 12px;
+        body {
+            background-color: black;
         }
 
         .line {
@@ -340,11 +159,6 @@
             top: 557px;
         }
 
-        .team1Player6 {
-            position: absolute;
-            left: 495px;
-            top: 559px;
-        }
 
 
 
@@ -375,12 +189,6 @@
 
         .team2Player5 {
             position: absolute;
-            left: 966px;
-            top: 557px;
-        }
-
-        .team2Player6 {
-            position: absolute;
             left: 1443px;
             top: 557px;
         }
@@ -390,28 +198,7 @@
 <body>
 
 
-    <p id="roundInfo" class="roundInfo">Finals</p>
-    <img id="cvreLogo" src="images/cvrelogo.png" class="cvreLogo">
-    <div class="leftTeam" id="Team1">
-        <img id="leftTeamImage" src="images/fallen.png" class="leftTeam Picture">
-        <h1 id="leftTeamName" class="leftTeam Name">Extra long team name lol</p>
-    </div>
 
-    <div class="rightTeam" id="Team2">
-        <img id="rightTeamImage" src="images/fallen.png" class="rightTeam Picture">
-        <h1 id="rightTeamName" class="rightTeam Name">Right Team</p>
-    </div>
-
-
-    <div class="Team1Box1"></div>
-    <div class="Team1Box2"></div>
-    <div class="Team1Box3"></div>
-    <div class="Team1Box4"></div>
-
-    <div class="Team2Box1"></div>
-    <div class="Team2Box2"></div>
-    <div class="Team2Box3"></div>
-    <div class="Team2Box4"></div>
 
     <div class="line"></div>
 
@@ -419,68 +206,58 @@
 
 
     <div class="playerInfo team1Player1" id="team1Player1">
-        <p id="team1Player1Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player1Name" class="playerInfo team1Name">Egg Time1</p>
         <p id="team1Player1Rank" class="playerInfo team1Rank">#0,000</p>
         <img id="team1Player1Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
     </div>
     <div class="playerInfo team1Player2" id="team1Player2">
-        <p id="team1Player2Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player2Name" class="playerInfo team1Name">Egg Time2</p>
         <p id="team1Player2Rank" class="playerInfo team1Rank">#0,000</p>
         <img id="team1Player2Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
     </div>
     <div class="playerInfo team1Player3" id="team1Player3">
-        <p id="team1Player3Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player3Name" class="playerInfo team1Name">Egg Time3</p>
         <p id="team1Player3Rank" class="playerInfo team1Rank">#0,000</p>
         <img id="team1Player3Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
     </div>
     <div class="playerInfo team1Player4" id="team1Player4">
-        <p id="team1Player4Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player4Name" class="playerInfo team1Name">Egg Time4</p>
         <p id="team1Player4Rank" class="playerInfo team1Rank">#0,000</p>
         <img id="team1Player4Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
     </div>
     <div class="playerInfo team1Player5" id="team1Player5">
-        <p id="team1Player5Name" class="playerInfo team1Name">Egg Time</p>
+        <p id="team1Player5Name" class="playerInfo team1Name">Egg Time5</p>
         <p id="team1Player5Rank" class="playerInfo team1Rank">#0,000</p>
         <img id="team1Player5Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
-    </div>
-    <div class="playerInfo team1Player6" id="team1Player6">
-        <p id="team1Player6Name" class="playerInfo team1Name">Egg Time</p>
-        <p id="team1Player6Rank" class="playerInfo team1Rank">#0,000</p>
-        <img id="team1Player6Profile" src="images/nosongcover.png" class="playerInfo team1Profile">
     </div>
 
 
 
     <div class="playerInfo team2Player1" id="team2Player1">
-        <p id="team2Player1Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player1Name" class="playerInfo team2Name">Egg Time1</p>
         <p id="team2Player1Rank" class="playerInfo team2Rank">#0,000</p>
         <img id="team2Player1Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
     </div>
-    
+
     <div class="playerInfo team2Player2" id="team2Player2">
-        <p id="team2Player2Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player2Name" class="playerInfo team2Name">Egg Time2</p>
         <p id="team2Player2Rank" class="playerInfo team2Rank">#0,000</p>
         <img id="team2Player2Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
     </div>
     <div class="playerInfo team2Player3" id="team2Player3">
-        <p id="team2Player3Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player3Name" class="playerInfo team2Name">Egg Time3</p>
         <p id="team2Player3Rank" class="playerInfo team2Rank">#0,000</p>
         <img id="team2Player3Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
     </div>
     <div class="playerInfo team2Player4" id="team2Player4">
-        <p id="team2Player4Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player4Name" class="playerInfo team2Name">Egg Time4</p>
         <p id="team2Player4Rank" class="playerInfo team2Rank">#0,000</p>
         <img id="team2Player4Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
     </div>
     <div class="playerInfo team2Player5" id="team2Player5">
-        <p id="team2Player5Name" class="playerInfo team2Name">Egg Time</p>
+        <p id="team2Player5Name" class="playerInfo team2Name">Egg Time5</p>
         <p id="team2Player5Rank" class="playerInfo team2Rank">#0,000</p>
         <img id="team2Player5Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
-    </div>
-    <div class="playerInfo team2Player6" id="team2Player6">
-        <p id="team2Player6Name" class="playerInfo team2Name">Egg Time</p>
-        <p id="team2Player6Rank" class="playerInfo team2Rank">#0,000</p>
-        <img id="team2Player6Profile" src="images/nosongcover.png" class="playerInfo team2Profile">
     </div>
 
 
@@ -491,17 +268,173 @@
 </body>
 
 <script>
+    var P1Name = document.getElementById('P1Name');
+    var P2Name = document.getElementById('P2Name');
+    var P3Name = document.getElementById('P3Name');
+    var P4Name = document.getElementById('P4Name');
+    var P1Rank = document.getElementById('P1Rank');
+    var P2Rank = document.getElementById('P2Rank');
+    var P3Rank = document.getElementById('P3Rank');
+    var P4Rank = document.getElementById('P4Rank');
+
+    var P1RawName = '';
+    var P2RawName = '';
+    var P3RawName = '';
+    var P4RawName = '';
+
+    var mapCount = 0;
+
+
+    var P1ScoreSaber = '';
+    var P2ScoreSaber = '';
+    var P3ScoreSaber = '';
+    var P4ScoreSaber = '';
 
 
 
 
+    var team1Player1NameData = "Egg Time";
+    var team1Player1SSIDData = "76561198117409561";
 
 
 
 
+    function connect() {
+
+        sock = new WebSocket("ws://localhost:1337");
+        sock.onopen = function () {
+            console.log("Connected to BSTournamentHelper");
+        };
+
+        sock.onclose = function (e) {
+            console.log("Socket is closed. Reconnect attempt in 1 second");
+            setTimeout(function () {
+                connect();
+            }, 1000);
+        }
+
+        sock.onerror = function (err) {
+            console.log(err);
+            sock.close();
+        }
+        sock.onmessage = function (msg) {
+            let data = JSON.parse(msg.data);
+            console.log(data);
+
+
+            if (data.Event == "MatchData") {
+                //Will need to figure out how im sending the player data first
+                team1Player1NameData = data.Data.team1Player1Name;
+                team1Player2NameData = data.Data.team1Player2Name;
+                team1Player3NameData = data.Data.team1Player3Name;
+                team1Player4NameData = data.Data.team1Player4Name;
+                team1Player5NameData = data.Data.team1Player5Name;
+
+                team1Player1SSIDData = data.Data.team1Player1SSID;
+                team1Player2SSIDData = data.Data.team1Player2SSID;
+                team1Player3SSIDData = data.Data.team1Player3SSID;
+                team1Player4SSIDData = data.Data.team1Player4SSID;
+                team1Player5SSIDData = data.Data.team1Player5SSID;
+
+                team2Player1NameData = data.Data.team2Player1Name;
+                team2Player2NameData = data.Data.team2Player2Name;
+                team2Player3NameData = data.Data.team2Player3Name;
+                team2Player4NameData = data.Data.team2Player4Name;
+                team2Player5NameData = data.Data.team2Player5Name;
+
+                team2Player1SSIDData = data.Data.team2Player1SSID;
+                team2Player2SSIDData = data.Data.team2Player2SSID;
+                team2Player3SSIDData = data.Data.team2Player3SSID;
+                team2Player4SSIDData = data.Data.team2Player4SSID;
+                team2Player5SSIDData = data.Data.team2Player5SSID;
+
+                console.log("going");
+
+                //Team1Player1
+                team1Player1Name.innerText = team1Player1NameData;
+                if (team1Player1SSIDData == "Quest") {
+                    console.log("Quest");
+                    team1Player1Rank.innerText = "Quest";
+                    document.getElementById('team1Player1Profile').src =
+                        "https://cdn.scoresaber.com/avatars/oculus.png";
+                } else if (team1Player1SSIDData != "Quest") {
+                    console.log("not quest");
+                    fetch(`https://new.scoresaber.com/api/player/${team1Player1SSIDData}/full`)
+                        .then(response => {
+                            return response.json()
+                        })
+                        .then(data => {
+                            console.log(data);
+                            // Do stuff here
+                            team1Player1Rank.innerText = "#" + data.playerInfo.rank;
+                            //turn to string
+                            team1Player1SSIDData = '' + team1Player1SSIDData;
+                            //get profile
+                            if (team1Player1SSIDData.startsWith("765") == true) {
+                                document.getElementById('team1Player1Profile').src =
+                                    "https://cdn.scoresaber.com/avatars/" + team1Player1SSIDData +
+                                    ".jpg";
+                            }
+                            if (team1Player1SSIDData.startsWith("765") == false) {
+                                document.getElementById('team1Player1Profile').src =
+                                    "https://cdn.scoresaber.com/avatars/oculus.png";
+                            }
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                }
 
 
 
+
+                fetch(`https://new.scoresaber.com/api/player/${P2ScoreSaber}/full`)
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data);
+                        // Do stuff here
+                        P2RawName = data.playerInfo.playerName;
+                        P2Name.innerText = P2RawName;
+                        P2Rank.innerText = "#" + data.playerInfo.rank;
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                fetch(`https://new.scoresaber.com/api/player/${P3ScoreSaber}/full`)
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data);
+                        // Do stuff here
+                        P3RawName = data.playerInfo.playerName;
+                        P3Name.innerText = P3RawName;
+                        P3Rank.innerText = "#" + data.playerInfo.rank;
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                fetch(`https://new.scoresaber.com/api/player/${P4ScoreSaber}/full`)
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data);
+                        // Do stuff here
+                        P4RawName = data.playerInfo.playerName;
+                        P4Name.innerText = P4RawName;
+                        P4Rank.innerText = "#" + data.playerInfo.rank;
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+
+            }
+        }
+    }
+    connect();
 </script>
 
 </html>
